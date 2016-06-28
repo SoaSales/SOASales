@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="antlr.collections.List"/>
+<fullyQualifiedTypeName name="products.ProductsMerge"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="org.python.antlr.PythonParser.return_stmt_return"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.map.JsonDeserializer"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.core.ObjectCodec"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Float"/>
+<fullyQualifiedTypeName name="converters.ProductJsonConverter"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.annotate.JsonAutoDetect"/>
+<fullyQualifiedTypeName name="Common.Constants"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="org.mule.routing.EventGroup"/>
+<fullyQualifiedTypeName name="org.mule.routing.AbstractCorrelationAggregator"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="org.mule.routing.AbstractAggregator"/>
+<fullyQualifiedTypeName name="org.mule.routing.correlation.CollectionCorrelatorCallback"/>
+<fullyQualifiedTypeName name="javax.xml.xpath.XPath"/>
+<fullyQualifiedTypeName name="javax.xml.xpath.XPathFactory"/>
+<fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+<fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
+<fullyQualifiedTypeName name="org.mule.routing.AggregationStrategy"/>
+<fullyQualifiedTypeName name="org.mule.api.routing.AggregationContext"/>
+<fullyQualifiedTypeName name="org.mule.api.MuleException"/>
+<fullyQualifiedTypeName name="org.mule.api.MuleMessage"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="entities.product"/>
+<fullyQualifiedTypeName name="org.mule.DefaultMuleEvent"/>
+<fullyQualifiedTypeName name="org.mule.transport.NullPayload"/>
+<fullyQualifiedTypeName name="entities.SoapRequest"/>
+<fullyQualifiedTypeName name="Common.SoapOperations"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="entities.ProductIdentifier"/>
+<fullyQualifiedTypeName name="groovy.util.NodeList"/>
+<fullyQualifiedTypeName name="org.mule.api.MuleEvent"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.node.LongNode"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>

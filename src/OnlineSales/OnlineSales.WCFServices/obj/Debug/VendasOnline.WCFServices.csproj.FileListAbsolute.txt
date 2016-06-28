@@ -1,0 +1,17 @@
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementação\DotNet\VendasOnline\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll.config
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementação\DotNet\VendasOnline\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementação\DotNet\VendasOnline\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementação\DotNet\VendasOnline\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.csprojResolveAssemblyReference.cache
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementação\DotNet\VendasOnline\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementação\DotNet\VendasOnline\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\VendasOnline\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll.config
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\VendasOnline\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\VendasOnline\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\VendasOnline\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\VendasOnline\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll.config
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.csprojResolveAssemblyReference.cache
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\obj\Debug\VendasOnline.WCFServices.pdb

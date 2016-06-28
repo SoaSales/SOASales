@@ -1,0 +1,114 @@
+package converters;
+
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.JsonParser;
+import org.codehaus.jackson.JsonProcessingException;
+import org.codehaus.jackson.map.DeserializationContext;
+import org.codehaus.jackson.map.JsonDeserializer;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.node.IntNode;
+import org.mule.api.MuleMessage;
+
+import Common.Constants;
+import entities.product;
+
+public class ProductConverter extends JsonDeserializer<product>   {
+	
+
+	@Override
+	public product deserialize(JsonParser jp, DeserializationContext ctx)
+			throws IOException, JsonProcessingException {		
+		
+		 JsonNode node = jp.getCodec().readTree(jp);		
+	        long id = node.get("ProductId").asLong();;
+	        String name = node.get("Name").asText();
+	        String description = node.get("Description").asText();
+	        String category = node.get("Category").asText();
+	        String otherInfo = node.get("OtherInfo").asText();
+	        String priceStr = node.get("Quantity").asText();
+	        Float price = Float.parseFloat(priceStr);
+	        String quantity = ((IntNode) node.get("Quantity")).getNumberValue().toString();
+		
+		return new product(id, Constants.OnlineSalesId, name, description, price, quantity, category, otherInfo, Constants.VendasOnlineName);
+	}
+	
+	public List<product> ConvertMessageProductResponse(MuleMessage message){	
+		List<product> productsList = new ArrayList<>();	
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String  payload = ReadInputStream(message.getPayload());
+		
+		try {
+			payload = payload.replace("[", "").replace("]", ",");
+			
+			String[] jsonObjects = payload.split("},");
+			
+			for(int i=0; i< jsonObjects.length; i++){			
+				product prod = mapper.readValue(jsonObjects[i]+"}", product.class);
+				productsList.add(prod);
+			}			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		return productsList;
+	}
+	
+	public String ReadInputStream(Object object) {
+		InputStream content = (InputStream)object;
+	   
+		int numRead;
+	    final int bufferSize = 1024;
+	    byte[] buffer = new byte[bufferSize];
+	    ByteArrayOutputStream outString = new ByteArrayOutputStream();
+	    try{
+	    	 while ((numRead = content.read(buffer)) != -1) {
+	             outString.write(buffer, 0, numRead);
+	         }
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			
+	    } finally {
+	    	try {
+	    		content.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
+	    return new String(outString.toByteArray());
+	}
+	
+	public List<product> ConvertStringProductResponse(String payload){	
+		List<product> productsList = new ArrayList<>();	
+		ObjectMapper mapper = new ObjectMapper();
+		
+		try {
+			payload = payload.replace("[", "").replace("]", ",");
+			
+			String[] jsonObjects = payload.split("},");
+			
+			for(int i=0; i< jsonObjects.length; i++){			
+				product prod = mapper.readValue(jsonObjects[i]+"}", product.class);
+				productsList.add(prod);
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		return productsList;
+	}
+	
+
+}

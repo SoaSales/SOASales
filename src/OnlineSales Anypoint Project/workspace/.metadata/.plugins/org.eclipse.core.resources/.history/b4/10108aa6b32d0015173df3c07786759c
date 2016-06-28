@@ -1,0 +1,67 @@
+package aggregators;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.mule.DefaultMuleEvent;
+import org.mule.api.MuleContext;
+import org.mule.api.MuleEvent;
+import org.mule.api.MuleException;
+import org.mule.api.MuleMessage;
+import org.mule.api.routing.AggregationContext;
+import org.mule.routing.AbstractAggregator;
+import org.mule.routing.AbstractCorrelationAggregator;
+import org.mule.routing.AggregationException;
+import org.mule.routing.AggregationStrategy;
+import org.mule.routing.EventGroup;
+import org.mule.routing.correlation.CollectionCorrelatorCallback;
+import org.mule.routing.correlation.EventCorrelatorCallback;
+
+import entities.product;
+
+public class CompareAggregator extends AbstractAggregator {
+	
+	protected MuleEvent aggregateEvents(EventGroup events)
+			throws AggregationException {
+
+		 // mule event that will be rewritten
+		 MuleEvent originalEvent = events.getMessageCollectionEvent();
+		 // message which payload will be rewritten
+		 MuleMessage message = originalEvent.getMessage();
+		 
+		 List<product> productsList = new ArrayList<product>();
+		// MuleEvent result = null;
+	       
+		try
+		{
+			for (Iterator<MuleEvent> iterator = events.iterator(); iterator.hasNext();)
+			{
+				MuleEvent event = iterator.next();
+				//message = event.transformMessageToString();
+				
+				//lookAtMe = event.transformMessageToString();
+				
+	
+				//buffer.append(event.transformMessageToString());
+			}
+		}
+		catch (Exception e)
+		{
+			throw new AggregationException(events, null, e);
+			}
+		
+		  message.setPayload(productsList);	     
+		   
+		     return new DefaultMuleEvent(message, originalEvent); 
+		
+		//return new DefaultMuleEvent(new DefaultMuleMessage(buffer.toString(), muleContext), events.getMessageCollectionEvent());
+	}
+
+	@Override
+	protected EventCorrelatorCallback getCorrelatorCallback(
+			MuleContext muleContext) {
+		return new CollectionCorrelatorCallback(muleContext,false,storePrefix);
+	}
+
+}

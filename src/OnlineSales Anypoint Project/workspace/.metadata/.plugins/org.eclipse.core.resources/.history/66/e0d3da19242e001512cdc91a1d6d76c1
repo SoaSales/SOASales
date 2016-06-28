@@ -1,0 +1,41 @@
+package Transformers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageTransformer;
+
+import entities.product;
+
+public class CompareResponseTransformer extends AbstractMessageTransformer{
+
+	@Override
+	public Object transformMessage(MuleMessage message, String outputEncoding)
+			throws TransformerException {
+
+		String soapResponse = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><CompareProductsResponse xmlns=\"http://tempuri.org/\">" + 
+				"<CompareProductsResult xmlns:a=\"http://schemas.datacontract.org/2004/07/VendasOnline.WCFServices.DataContracts\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">";		
+		
+		List<List<product>> payload = (List<List<product>>)message.getPayload();
+		
+		for(List<product> productList : payload){
+			for(product prod : productList){
+				soapResponse +=  "<a:ProductsDataContract><a:Category>" + prod.getCategory() + "</a:Category><a:Description>" +
+	              prod.getDescription() + "</a:Description><a:Name>" + 
+	              prod.getName() +"</a:Name><a:Other_Info>" +
+	              prod.getOther_Info()  + "</a:Other_Info><a:Price>" +
+	              prod.getPrice() + "</a:Price><a:ProductId>" +
+	              prod.getProductId() + "</a:ProductId><a:Quantity>" +
+	              prod.getQuantity() + "</a:Quantity></a:ProductsDataContract>";
+			}
+		}		
+		
+		soapResponse += " </CompareProductsResult></CompareProductsResponse>"; 
+		
+		return soapResponse;
+	}
+
+	
+}

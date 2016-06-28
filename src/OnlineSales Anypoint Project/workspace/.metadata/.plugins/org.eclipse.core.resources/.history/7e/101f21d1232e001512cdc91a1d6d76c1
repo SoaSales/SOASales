@@ -1,0 +1,41 @@
+package Transformers;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.codehaus.jackson.map.ObjectMapper;
+import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageTransformer;
+
+import entities.product;
+
+public class ProductToProductTransformer extends AbstractMessageTransformer{
+
+	@Override
+	public Object transformMessage(MuleMessage message, String outputEncoding)
+			throws TransformerException {
+		
+		String payload = (String)message.getPayload();
+		product newProduct = null;
+		ObjectMapper mapper = new ObjectMapper();
+		
+		try {
+			payload = payload.replace("[", "").replace("]", ",");
+			
+			String[] jsonObjects = payload.split("},");
+			
+			for(int i=0; i< jsonObjects.length; i++){			
+				newProduct = mapper.readValue(jsonObjects[i]+"}", product.class);
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		return newProduct;
+	}
+
+}

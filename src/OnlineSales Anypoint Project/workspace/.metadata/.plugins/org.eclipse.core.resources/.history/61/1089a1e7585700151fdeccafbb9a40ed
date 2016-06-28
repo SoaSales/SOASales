@@ -1,0 +1,77 @@
+package Transformers;
+
+import java.io.StringReader;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageTransformer;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import Common.Constants;
+import entities.product;
+
+public class EbayProductToProductTransformer extends AbstractMessageTransformer {
+
+	@Override
+	public Object transformMessage(MuleMessage message, String outputEncoding)
+			throws TransformerException {
+		
+		product newProduct = null;	
+		String payload = (String)message.getPayload();
+		
+		DocumentBuilder db;
+		try {
+			db = DocumentBuilderFactory.newInstance().newDocumentBuilder();			
+			
+		    InputSource is = new InputSource();
+		    is.setCharacterStream(new StringReader(payload));
+		    
+			Document doc = db.parse(is);
+			NodeList nodes = doc.getElementsByTagName("item");			
+			
+				Element element = (Element)nodes.item(0);
+				NodeList productIdNodes = element.getElementsByTagName("productId");
+				
+				if(productIdNodes.getLength()>0){			
+				
+					String productIdStr = productIdNodes.item(0).getTextContent();
+					int id = Integer.parseInt(productIdStr);
+				    String name = element.getElementsByTagName("title").item(0).getTextContent();
+				    name.replace("&", "and");
+				    String description = "";
+				    String quantity = "";
+				    
+				    NodeList categoryElements = element.getElementsByTagName("categoryName");
+				    String category = "";
+				    for(int cat =0; cat < categoryElements.getLength(); cat++){
+				    	category += categoryElements.item(cat).getTextContent() + " ";			    	
+				    }
+				    if(category != null{
+				    	category.replace("&", "and");
+				    }
+				    
+				    String priceStr = element.getElementsByTagName("currentPrice").item(0).getTextContent();
+				    Float price = Float.parseFloat(priceStr);			   
+				        
+				    String otherInfo = element.getElementsByTagName("conditionDisplayName").item(0).getTextContent();
+				    otherInfo += element.getElementsByTagName("location").item(0).getTextContent();
+				    if(otherInfo!=null){
+				    	otherInfo.replace("&", "and");
+				    }
+				    
+				    newProduct = new product(id, Constants.EbayId, name, description, price, quantity, category, otherInfo, Constants.EbayName);
+				}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return newProduct;
+	}
+}

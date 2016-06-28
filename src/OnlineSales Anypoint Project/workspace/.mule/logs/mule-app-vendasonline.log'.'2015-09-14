@@ -1,0 +1,412 @@
+INFO  2015-09-14 00:55:45,521 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'vendasonline'                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-09-14 00:55:45,694 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2015-09-14 00:55:45,925 [main] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@18efee1: startup date [Mon Sep 14 00:55:45 BST 2015]; root of context hierarchy
+WARN  2015-09-14 00:55:47,698 [main] org.mule.transport.http.config.HttpResponseBuilderDefinitionParser: Schema warning: Use of element <response-builder> is deprecated.  HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead..
+WARN  2015-09-14 00:55:49,046 [main] org.mule.module.ognl.expression.OgnlExpressionEvaluator: OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+INFO  2015-09-14 00:55:49,973 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx2.log
+INFO  2015-09-14 00:55:49,989 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx2.log
+INFO  2015-09-14 00:55:50,018 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2015-09-14 00:55:50,470 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow1
+INFO  2015-09-14 00:55:50,471 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@42ce9b
+INFO  2015-09-14 00:55:50,502 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow1.stage1
+INFO  2015-09-14 00:55:50,511 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.15476131
+INFO  2015-09-14 00:55:53,225 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: EbaySetVariablesFindByProduct
+INFO  2015-09-14 00:55:53,226 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@13bbdf3
+INFO  2015-09-14 00:55:53,232 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: EbaySetVariablesFindByProduct.stage1
+INFO  2015-09-14 00:55:58,381 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: getproductFlow
+INFO  2015-09-14 00:55:58,382 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@14cf2ae
+INFO  2015-09-14 00:55:58,389 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: getproductFlow.stage1
+INFO  2015-09-14 00:55:58,448 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.5839753
+INFO  2015-09-14 00:56:02,212 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.15910754
+INFO  2015-09-14 00:56:02,213 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.15856046
+INFO  2015-09-14 00:56:04,367 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductsSub_Flow1
+INFO  2015-09-14 00:56:04,368 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1e17cbf
+INFO  2015-09-14 00:56:04,374 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductsSub_Flow1.stage1
+INFO  2015-09-14 00:56:04,435 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.2221905
+INFO  2015-09-14 00:56:06,128 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.772149
+INFO  2015-09-14 00:56:06,129 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.23614570
+INFO  2015-09-14 00:56:06,134 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare1
+INFO  2015-09-14 00:56:06,135 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@b53d4f
+INFO  2015-09-14 00:56:06,141 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare1.stage1
+INFO  2015-09-14 00:56:06,160 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare2
+INFO  2015-09-14 00:56:06,161 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@11dfdb5
+INFO  2015-09-14 00:56:06,167 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare2.stage1
+INFO  2015-09-14 00:56:06,179 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare3
+INFO  2015-09-14 00:56:06,180 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1c48cbe
+INFO  2015-09-14 00:56:06,185 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare3.stage1
+INFO  2015-09-14 00:56:06,197 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare4
+INFO  2015-09-14 00:56:06,197 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5085ad
+INFO  2015-09-14 00:56:06,210 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare4.stage1
+INFO  2015-09-14 00:56:06,239 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: comparetestFlow
+INFO  2015-09-14 00:56:06,240 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@a7ccc6
+INFO  2015-09-14 00:56:06,247 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: comparetestFlow.stage1
+WARN  2015-09-14 00:56:06,486 [main] org.mule.transport.http.HttpConnector: HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead.
+INFO  2015-09-14 00:56:06,688 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: connector.http.mule.default
+INFO  2015-09-14 00:56:07,274 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.4725843
+INFO  2015-09-14 00:56:07,313 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow
+INFO  2015-09-14 00:56:07,313 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@66602a
+INFO  2015-09-14 00:56:07,319 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow.stage1
+INFO  2015-09-14 00:56:07,324 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.25023454
+INFO  2015-09-14 00:56:09,336 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: searchProductFlow
+INFO  2015-09-14 00:56:09,337 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1eeba4a
+INFO  2015-09-14 00:56:09,343 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: searchProductFlow.stage1
+INFO  2015-09-14 00:56:09,403 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.32047042
+INFO  2015-09-14 00:56:09,404 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.6221261
+INFO  2015-09-14 00:56:10,691 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.28441393
+INFO  2015-09-14 00:56:10,758 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow
+INFO  2015-09-14 00:56:10,759 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@fcbeeb
+INFO  2015-09-14 00:56:10,765 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow.stage1
+INFO  2015-09-14 00:56:10,765 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.19019570
+INFO  2015-09-14 00:56:10,807 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.25908805
+INFO  2015-09-14 00:56:10,903 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow1
+INFO  2015-09-14 00:56:10,903 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1329471
+INFO  2015-09-14 00:56:10,909 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow1.stage1
+INFO  2015-09-14 00:56:10,910 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.815797
+INFO  2015-09-14 00:56:10,910 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.4030933
+INFO  2015-09-14 00:56:10,911 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.28774705
+INFO  2015-09-14 00:56:10,955 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.1154268
+INFO  2015-09-14 00:56:10,964 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: GetProduct
+INFO  2015-09-14 00:56:10,965 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@10ad3b2
+INFO  2015-09-14 00:56:10,970 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: GetProduct.stage1
+INFO  2015-09-14 00:56:10,996 [main] org.mule.config.spring.SpringXmlConfigurationBuilder: Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-09-14 00:56:10,997 [main] org.mule.config.builders.AutoConfigurationBuilder: Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-09-14 00:56:10,998 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'vendasonline'                              +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-09-14 00:56:11,014 [main] org.mule.util.queue.QueueXaResourceManager: Starting ResourceManager
+INFO  2015-09-14 00:56:11,014 [main] org.mule.util.queue.QueueXaResourceManager: Started ResourceManager
+INFO  2015-09-14 00:56:11,071 [main] org.mule.transport.http.HttpConnector: Connected: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=197c123
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-09-14 00:56:11,073 [main] org.mule.transport.http.HttpConnector: Starting: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=197c123
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-09-14 00:56:11,075 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: connector.http.mule.default
+INFO  2015-09-14 00:56:11,101 [main] org.mule.module.s3.agents.DefaultSplashScreenAgent: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-09-14 00:56:11,102 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting model: _muleSystemModel
+INFO  2015-09-14 00:56:11,104 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow1
+INFO  2015-09-14 00:56:11,106 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow1.stage1
+INFO  2015-09-14 00:56:11,112 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.15476131
+INFO  2015-09-14 00:56:11,128 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow
+INFO  2015-09-14 00:56:11,129 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow.stage1
+INFO  2015-09-14 00:56:11,134 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.25023454
+INFO  2015-09-14 00:56:11,137 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: searchProductFlow
+INFO  2015-09-14 00:56:11,137 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: searchProductFlow.stage1
+INFO  2015-09-14 00:56:11,142 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.32047042
+INFO  2015-09-14 00:56:11,143 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.6221261
+INFO  2015-09-14 00:56:11,144 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.28441393
+INFO  2015-09-14 00:56:11,146 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow
+INFO  2015-09-14 00:56:11,147 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow.stage1
+INFO  2015-09-14 00:56:11,150 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.19019570
+INFO  2015-09-14 00:56:11,152 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.25908805
+INFO  2015-09-14 00:56:11,153 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow1
+INFO  2015-09-14 00:56:11,153 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow1.stage1
+INFO  2015-09-14 00:56:11,156 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.815797
+INFO  2015-09-14 00:56:11,158 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.4030933
+INFO  2015-09-14 00:56:11,160 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.28774705
+INFO  2015-09-14 00:56:11,161 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.1154268
+INFO  2015-09-14 00:56:11,162 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: GetProduct
+INFO  2015-09-14 00:56:11,163 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: GetProduct.stage1
+INFO  2015-09-14 00:56:11,167 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: getproductFlow
+INFO  2015-09-14 00:56:11,168 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: getproductFlow.stage1
+INFO  2015-09-14 00:56:11,170 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.5839753
+INFO  2015-09-14 00:56:11,172 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.15910754
+INFO  2015-09-14 00:56:11,173 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.15856046
+INFO  2015-09-14 00:56:11,174 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: EbaySetVariablesFindByProduct
+INFO  2015-09-14 00:56:11,175 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: EbaySetVariablesFindByProduct.stage1
+INFO  2015-09-14 00:56:11,178 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: comparetestFlow
+INFO  2015-09-14 00:56:11,179 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: comparetestFlow.stage1
+INFO  2015-09-14 00:56:11,181 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.4725843
+INFO  2015-09-14 00:56:11,185 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare1
+INFO  2015-09-14 00:56:11,186 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare1.stage1
+INFO  2015-09-14 00:56:11,189 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare2
+INFO  2015-09-14 00:56:11,189 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare2.stage1
+INFO  2015-09-14 00:56:11,192 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare3
+INFO  2015-09-14 00:56:11,193 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare3.stage1
+INFO  2015-09-14 00:56:11,197 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare4
+INFO  2015-09-14 00:56:11,197 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare4.stage1
+INFO  2015-09-14 00:56:11,201 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductsSub_Flow1
+INFO  2015-09-14 00:56:11,201 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductsSub_Flow1.stage1
+INFO  2015-09-14 00:56:11,203 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.2221905
+INFO  2015-09-14 00:56:11,206 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.772149
+INFO  2015-09-14 00:56:11,207 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.23614570
+INFO  2015-09-14 00:56:11,255 [main] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Listening for requests on http://0.0.0.0:8081/VendasOnline
+INFO  2015-09-14 00:56:11,263 [main] org.mule.module.management.agent.WrapperManagerAgent: This JVM hasn't been launched by the wrapper, the agent will not run.
+INFO  2015-09-14 00:56:11,328 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="connector.http.mule.default.1"
+INFO  2015-09-14 00:56:11,339 [main] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Application: vendasonline                                          *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   JMX Agent                                                        *
+**********************************************************************
+INFO  2015-09-14 00:57:30,051 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: GetProduct Request -  vendor: 1  Id=657 
+INFO  2015-09-14 00:57:30,081 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get SubFlow  Vendor 1 and product 657
+INFO  2015-09-14 00:57:30,103 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: DEFAULT REST VendasOnline
+INFO  2015-09-14 00:57:30,448 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: REST RESULT
+INFO  2015-09-14 00:57:30,482 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: getproductFlow. Content is:                     *
+* '{"ProductId":657,"Name":"Emergency Sleeping Bag Camping Hiking Boating      *
+* Emergency Disaster Survival G...[100 of 362]'                                *
+********************************************************************************
+INFO  2015-09-14 00:57:30,635 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get Product Result - Payload:  entities.product@ec83f0
+INFO  2015-09-14 00:57:57,048 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search Request: Query params: +   Televisions 
+INFO  2015-09-14 00:57:57,053 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - LivrosOnline
+INFO  2015-09-14 00:57:57,053 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST Flow WCF - VendasOnline
+INFO  2015-09-14 00:57:57,054 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - Ebay
+INFO  2015-09-14 00:57:57,081 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":2483,"Name":"Samsung UN40H5203 40-Inch 1080p 60Hz Smart LED   *
+* TV (2014 Model)","Descript...[100 of 26763]'                                 *
+********************************************************************************
+INFO  2015-09-14 00:57:57,107 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Vendas Online RESULT - Payload: [entities.product@1365278, entities.product@16064b4, entities.product@1736934, entities.product@1fffa98, entities.product@9d2de1, entities.product@12f122b, entities.product@151e261, entities.product@e56fc7, entities.product@10da697, entities.product@1343548, entities.product@962e7d, entities.product@1c62b83, entities.product@152dec9, entities.product@1a07c8c, entities.product@150eaef, entities.product@1702c0e, entities.product@15c6ebf, entities.product@16ae233, entities.product@28850c, entities.product@36ed7a, entities.product@20f101, entities.product@ae9884, entities.product@9f35c0, entities.product@81d198, entities.product@e763da, entities.product@14cbb39, entities.product@97ab3c, entities.product@16b24c2, entities.product@13a75b3, entities.product@1056daa, entities.product@162bda7, entities.product@1914494, entities.product@2d8acb, entities.product@1f35310, entities.product@1d27bef, entities.product@1c6a591, entities.product@9fe804, entities.product@39778c, entities.product@d7b280, entities.product@1080fae, entities.product@3d7c87, entities.product@ba8437, entities.product@13e407c, entities.product@1fb96c2, entities.product@66c9bb, entities.product@464675, entities.product@1bbd16b, entities.product@1b1eea5, entities.product@aa9eca, entities.product@19ef18d, entities.product@4993b, entities.product@1e80710, entities.product@27dda7, entities.product@14923f3, entities.product@d73fcc, entities.product@19d873b, entities.product@1195110, entities.product@1192444, entities.product@19bf627, entities.product@3da760, entities.product@1b7b093, entities.product@a98af4, entities.product@e1cccd, entities.product@4cc2e1, entities.product@18e535e, entities.product@103704e, entities.product@c226f1, entities.product@8ad106, entities.product@1a0e758, entities.product@b47aa2, entities.product@df5241, entities.product@191372f, entities.product@be0d36, entities.product@155725b, entities.product@c6be47, entities.product@1f64fb8, entities.product@1ebe72c, entities.product@961769, entities.product@1db0663, entities.product@808f29]
+WARN  2015-09-14 00:57:57,132 [[vendasonline].ScatterGatherWorkManager.01] org.mule.registry.TransientRegistry: TransientRegistry already contains an object named '_muleDefaultHttpRequestConfig'.  The previous object will be overwritten.
+INFO  2015-09-14 00:57:57,226 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"/>'                                              *
+********************************************************************************
+INFO  2015-09-14 00:57:57,230 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Livros Online RESULT - Payload: []
+WARN  2015-09-14 00:58:07,453 [[vendasonline].ScatterGatherWorkManager.03] org.apache.cxf.phase.PhaseInterceptorChain: Interceptor for {http://support.cxf.module.mule.org/}ProxyService#{http://support.cxf.module.mule.org/}invoke has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: Error sending HTTP request. Message payload is of type: byte[]
+	at org.mule.module.cxf.transport.MuleUniversalConduit$2.handleMessage(MuleUniversalConduit.java:194) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263) ~[cxf-api-2.5.9.jar:2.5.9]
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:531) ~[cxf-rt-core-2.5.9.jar:2.5.9]
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:462) ~[cxf-rt-core-2.5.9.jar:2.5.9]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.doSendWithClient(CxfOutboundMessageProcessor.java:238) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.process(CxfOutboundMessageProcessor.java:125) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(AbstractInterceptingMessageProcessorBase.java:102) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$2.process(WSConsumer.java:195) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(AbstractInterceptingMessageProcessorBase.java:102) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$1.process(WSConsumer.java:159) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.DefaultMessageProcessorChain.doProcess(DefaultMessageProcessorChain.java:94) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.AbstractMessageProcessorChain.process(AbstractMessageProcessorChain.java:69) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper.doProcess(InterceptingChainLifecycleWrapper.java:50) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.AbstractMessageProcessorChain.process(AbstractMessageProcessorChain.java:69) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper.access$001(InterceptingChainLifecycleWrapper.java:22) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper$1.process(InterceptingChainLifecycleWrapper.java:66) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper.process(InterceptingChainLifecycleWrapper.java:61) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer.process(WSConsumer.java:104) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.DefaultMessageProcessorChain.doProcess(DefaultMessageProcessorChain.java:94) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.AbstractMessageProcessorChain.process(AbstractMessageProcessorChain.java:69) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper.doProcess(InterceptingChainLifecycleWrapper.java:50) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.AbstractMessageProcessorChain.process(AbstractMessageProcessorChain.java:69) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper.access$001(InterceptingChainLifecycleWrapper.java:22) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper$1.process(InterceptingChainLifecycleWrapper.java:66) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.processor.chain.InterceptingChainLifecycleWrapper.process(InterceptingChainLifecycleWrapper.java:61) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.work.ProcessingMuleEventWork.doRun(ProcessingMuleEventWork.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.work.AbstractMuleEventWork.run(AbstractMuleEventWork.java:49) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.work.WorkerContext.run(WorkerContext.java:286) ~[mule-core-3.6.1.jar:3.6.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.7.0_80-ea]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.7.0_80-ea]
+	at java.lang.Thread.run(Unknown Source) [?:1.7.0_80-ea]
+Caused by: org.mule.api.MessagingException: Error sending HTTP request. Message payload is of type: byte[]
+	at org.mule.module.http.internal.request.DefaultHttpRequester.innerProcess(DefaultHttpRequester.java:190) ~[mule-module-http-3.6.1.jar:3.6.1]
+	at org.mule.module.http.internal.request.DefaultHttpRequester.process(DefaultHttpRequester.java:166) ~[mule-module-http-3.6.1.jar:3.6.1]
+	at org.mule.client.DefaultLocalMuleClient.send(DefaultLocalMuleClient.java:124) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumerConfig$1.process(WSConsumerConfig.java:124) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$3.process(WSConsumer.java:226) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.processNext(CxfOutboundMessageProcessor.java:162) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.transport.MuleUniversalConduit.processNext(MuleUniversalConduit.java:345) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.transport.MuleUniversalConduit.dispatchMuleMessage(MuleUniversalConduit.java:248) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.transport.MuleUniversalConduit$2.handleMessage(MuleUniversalConduit.java:190) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263) ~[cxf-api-2.5.9.jar:2.5.9]
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:531) ~[cxf-rt-core-2.5.9.jar:2.5.9]
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:462) ~[cxf-rt-core-2.5.9.jar:2.5.9]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.doSendWithClient(CxfOutboundMessageProcessor.java:238) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.process(CxfOutboundMessageProcessor.java:125) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$2.process(WSConsumer.java:195) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$1.process(WSConsumer.java:159) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer.process(WSConsumer.java:104) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	... 6 more
+Caused by: java.util.concurrent.TimeoutException
+	at org.glassfish.grizzly.impl.SafeFutureImpl$Sync.innerGet(SafeFutureImpl.java:357) ~[grizzly-framework-2.3.16.jar:2.3.16]
+	at org.glassfish.grizzly.impl.SafeFutureImpl.get(SafeFutureImpl.java:264) ~[grizzly-framework-2.3.16.jar:2.3.16]
+	at com.ning.http.client.providers.grizzly.GrizzlyResponseFuture.get(GrizzlyResponseFuture.java:173) ~[async-http-client-1.8.14.jar:?]
+	at org.mule.module.http.internal.request.grizzly.GrizzlyHttpClient.send(GrizzlyHttpClient.java:266) ~[mule-module-http-3.6.1.jar:3.6.1]
+	at org.mule.module.http.internal.request.DefaultHttpRequester.innerProcess(DefaultHttpRequester.java:185) ~[mule-module-http-3.6.1.jar:3.6.1]
+	at org.mule.module.http.internal.request.DefaultHttpRequester.process(DefaultHttpRequester.java:166) ~[mule-module-http-3.6.1.jar:3.6.1]
+	at org.mule.client.DefaultLocalMuleClient.send(DefaultLocalMuleClient.java:124) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumerConfig$1.process(WSConsumerConfig.java:124) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$3.process(WSConsumer.java:226) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.processNext(CxfOutboundMessageProcessor.java:162) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.transport.MuleUniversalConduit.processNext(MuleUniversalConduit.java:345) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.transport.MuleUniversalConduit.dispatchMuleMessage(MuleUniversalConduit.java:248) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.transport.MuleUniversalConduit$2.handleMessage(MuleUniversalConduit.java:190) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263) ~[cxf-api-2.5.9.jar:2.5.9]
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:531) ~[cxf-rt-core-2.5.9.jar:2.5.9]
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:462) ~[cxf-rt-core-2.5.9.jar:2.5.9]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.doSendWithClient(CxfOutboundMessageProcessor.java:238) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.module.cxf.CxfOutboundMessageProcessor.process(CxfOutboundMessageProcessor.java:125) ~[mule-module-cxf-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$2.process(WSConsumer.java:195) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer$1.process(WSConsumer.java:159) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.module.ws.consumer.WSConsumer.process(WSConsumer.java:104) ~[mule-module-ws-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:24) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:58) ~[mule-core-3.6.1.jar:3.6.1]
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44) ~[mule-core-3.6.1.jar:3.6.1]
+	... 6 more
+INFO  2015-09-14 00:58:07,465 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search RESULT - Payload:  [entities.product@1365278, entities.product@16064b4, entities.product@1736934, entities.product@1fffa98, entities.product@9d2de1, entities.product@12f122b, entities.product@151e261, entities.product@e56fc7, entities.product@10da697, entities.product@1343548, entities.product@962e7d, entities.product@1c62b83, entities.product@152dec9, entities.product@1a07c8c, entities.product@150eaef, entities.product@1702c0e, entities.product@15c6ebf, entities.product@16ae233, entities.product@28850c, entities.product@36ed7a, entities.product@20f101, entities.product@ae9884, entities.product@9f35c0, entities.product@81d198, entities.product@e763da, entities.product@14cbb39, entities.product@97ab3c, entities.product@16b24c2, entities.product@13a75b3, entities.product@1056daa, entities.product@162bda7, entities.product@1914494, entities.product@2d8acb, entities.product@1f35310, entities.product@1d27bef, entities.product@1c6a591, entities.product@9fe804, entities.product@39778c, entities.product@d7b280, entities.product@1080fae, entities.product@3d7c87, entities.product@ba8437, entities.product@13e407c, entities.product@1fb96c2, entities.product@66c9bb, entities.product@464675, entities.product@1bbd16b, entities.product@1b1eea5, entities.product@aa9eca, entities.product@19ef18d, entities.product@4993b, entities.product@1e80710, entities.product@27dda7, entities.product@14923f3, entities.product@d73fcc, entities.product@19d873b, entities.product@1195110, entities.product@1192444, entities.product@19bf627, entities.product@3da760, entities.product@1b7b093, entities.product@a98af4, entities.product@e1cccd, entities.product@4cc2e1, entities.product@18e535e, entities.product@103704e, entities.product@c226f1, entities.product@8ad106, entities.product@1a0e758, entities.product@b47aa2, entities.product@df5241, entities.product@191372f, entities.product@be0d36, entities.product@155725b, entities.product@c6be47, entities.product@1f64fb8, entities.product@1ebe72c, entities.product@961769, entities.product@1db0663, entities.product@808f29]
+INFO  2015-09-14 00:58:17,696 [[vendasonline].http.requester.null(1) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:57312}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+INFO  2015-09-14 00:58:40,429 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search Request: Query params: +   Televisions 
+INFO  2015-09-14 00:58:40,431 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - LivrosOnline
+INFO  2015-09-14 00:58:40,431 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow REST Flow WCF - VendasOnline
+INFO  2015-09-14 00:58:40,431 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - Ebay
+INFO  2015-09-14 00:58:40,457 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":2483,"Name":"Samsung UN40H5203 40-Inch 1080p 60Hz Smart LED   *
+* TV (2014 Model)","Descript...[100 of 26763]'                                 *
+********************************************************************************
+INFO  2015-09-14 00:58:40,461 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"/>'                                              *
+********************************************************************************
+INFO  2015-09-14 00:58:40,463 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Livros Online RESULT - Payload: []
+INFO  2015-09-14 00:58:40,466 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Vendas Online RESULT - Payload: [entities.product@107bc0c, entities.product@cadb3b, entities.product@1ff3f85, entities.product@a3517b, entities.product@3a8eac, entities.product@6cfdeb, entities.product@19284dc, entities.product@50ae47, entities.product@e1b77a, entities.product@d4c3a8, entities.product@7964aa, entities.product@1bfecbc, entities.product@14f3cfa, entities.product@12c47e9, entities.product@253994, entities.product@1e72ee7, entities.product@b873f5, entities.product@1c4f0c3, entities.product@9a931d, entities.product@3069be, entities.product@6e57d1, entities.product@4761bd, entities.product@61f7db, entities.product@1d75344, entities.product@19b9d7c, entities.product@18038b7, entities.product@10b7e54, entities.product@192d2df, entities.product@526fe8, entities.product@30e882, entities.product@f0c15e, entities.product@2705e1, entities.product@1f30b5f, entities.product@16f9748, entities.product@1350a24, entities.product@12cfc93, entities.product@7a26e2, entities.product@18ee186, entities.product@1785673, entities.product@173cf24, entities.product@2459be, entities.product@80037d, entities.product@651c6b, entities.product@2cc777, entities.product@1db8c16, entities.product@ca09b7, entities.product@43f8de, entities.product@87c551, entities.product@1ab62c1, entities.product@e0a62d, entities.product@be03fe, entities.product@f8297d, entities.product@6bdb60, entities.product@10f892d, entities.product@f6f949, entities.product@6842c9, entities.product@f8bc2e, entities.product@a9676, entities.product@11c2534, entities.product@ce8cfb, entities.product@89c7ab, entities.product@193b408, entities.product@109ce7, entities.product@ad3503, entities.product@17398ee, entities.product@3d405d, entities.product@14ca1ff, entities.product@1f7f7a, entities.product@1ea489a, entities.product@44a494, entities.product@910326, entities.product@65bf5d, entities.product@1f67800, entities.product@40575e, entities.product@27ecdc, entities.product@12f90d5, entities.product@1cdbfbe, entities.product@e7830e, entities.product@14d4504, entities.product@1ee1ab0]
+INFO  2015-09-14 00:58:42,820 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><findItemsByKeywordsResponse                 *
+* xmlns="http://www.ebay.com/market...[100 of 88119]'                          *
+********************************************************************************
+INFO  2015-09-14 00:58:42,831 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: EBAY RESULT - Payload: [entities.product@baea11, entities.product@15d1b15, entities.product@19d2032, entities.product@acf0fe, entities.product@1d1ca, entities.product@1743d65, entities.product@6ad689, entities.product@2accff, entities.product@1f89d56, entities.product@1218b8d, entities.product@150e1d8, entities.product@11b39ea, entities.product@776060, entities.product@1586c00]
+INFO  2015-09-14 00:58:42,832 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search RESULT - Payload:  [entities.product@107bc0c, entities.product@cadb3b, entities.product@1ff3f85, entities.product@a3517b, entities.product@3a8eac, entities.product@6cfdeb, entities.product@19284dc, entities.product@50ae47, entities.product@e1b77a, entities.product@d4c3a8, entities.product@7964aa, entities.product@1bfecbc, entities.product@14f3cfa, entities.product@12c47e9, entities.product@253994, entities.product@1e72ee7, entities.product@b873f5, entities.product@1c4f0c3, entities.product@9a931d, entities.product@3069be, entities.product@6e57d1, entities.product@4761bd, entities.product@61f7db, entities.product@1d75344, entities.product@19b9d7c, entities.product@18038b7, entities.product@10b7e54, entities.product@192d2df, entities.product@526fe8, entities.product@30e882, entities.product@f0c15e, entities.product@2705e1, entities.product@1f30b5f, entities.product@16f9748, entities.product@1350a24, entities.product@12cfc93, entities.product@7a26e2, entities.product@18ee186, entities.product@1785673, entities.product@173cf24, entities.product@2459be, entities.product@80037d, entities.product@651c6b, entities.product@2cc777, entities.product@1db8c16, entities.product@ca09b7, entities.product@43f8de, entities.product@87c551, entities.product@1ab62c1, entities.product@e0a62d, entities.product@be03fe, entities.product@f8297d, entities.product@6bdb60, entities.product@10f892d, entities.product@f6f949, entities.product@6842c9, entities.product@f8bc2e, entities.product@a9676, entities.product@11c2534, entities.product@ce8cfb, entities.product@89c7ab, entities.product@193b408, entities.product@109ce7, entities.product@ad3503, entities.product@17398ee, entities.product@3d405d, entities.product@14ca1ff, entities.product@1f7f7a, entities.product@1ea489a, entities.product@44a494, entities.product@910326, entities.product@65bf5d, entities.product@1f67800, entities.product@40575e, entities.product@27ecdc, entities.product@12f90d5, entities.product@1cdbfbe, entities.product@e7830e, entities.product@14d4504, entities.product@1ee1ab0, entities.product@baea11, entities.product@15d1b15, entities.product@19d2032, entities.product@acf0fe, entities.product@1d1ca, entities.product@1743d65, entities.product@6ad689, entities.product@2accff, entities.product@1f89d56, entities.product@1218b8d, entities.product@150e1d8, entities.product@11b39ea, entities.product@776060, entities.product@1586c00]
+INFO  2015-09-14 00:58:57,123 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Compare Request - Payload: com.ctc.wstx.sr.ValidatingStreamReader@d5fcdc
+INFO  2015-09-14 00:58:57,126 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: comparetestFlow. Content is: '<?xml             *
+* version="1.0" encoding="UTF-8"?><CompareProducts                             *
+* xmlns="http://tempuri.org/"><products><Produc...[100 of 525]'                *
+********************************************************************************
+INFO  2015-09-14 00:58:57,166 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1
+INFO  2015-09-14 00:58:57,166 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2
+INFO  2015-09-14 00:58:57,168 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3
+INFO  2015-09-14 00:58:57,169 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4
+INFO  2015-09-14 00:58:57,182 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: FlowCompare2 size:   2 payload  2
+INFO  2015-09-14 00:58:57,182 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 4 size:   2 payload  2
+INFO  2015-09-14 00:58:57,182 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 3 size:   2 payload  2
+INFO  2015-09-14 00:58:57,193 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Compare 4 Default - No product request
+INFO  2015-09-14 00:58:57,194 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Compare 3 Default - No product request
+INFO  2015-09-14 00:58:57,204 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Compare 2 Flow vendor
+INFO  2015-09-14 00:58:57,207 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4 Response
+INFO  2015-09-14 00:58:57,208 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3 Response
+INFO  2015-09-14 00:58:57,209 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-09-14 00:58:57,210 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 1  size:   2 payload  2 ///  true    / 2
+INFO  2015-09-14 00:58:57,211 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Compare 1 Flow vendor
+INFO  2015-09-14 00:58:57,211 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: DEFAULT REST id: 2483
+INFO  2015-09-14 00:58:57,215 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-09-14 00:58:57,216 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Ebay
+INFO  2015-09-14 00:58:57,225 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: VendasOnline RESULT
+INFO  2015-09-14 00:58:57,227 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is:           *
+* '{"ProductId":2483,"Name":"Samsung UN40H5203 40-Inch 1080p 60Hz Smart LED    *
+* TV (2014 Model)","Descripti...[100 of 337]'                                  *
+********************************************************************************
+INFO  2015-09-14 00:58:57,231 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2 Response
+INFO  2015-09-14 00:58:57,824 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: EBAY RESULT
+INFO  2015-09-14 00:58:57,827 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is: '<?xml    *
+* version="1.0" encoding="UTF-8"?><findItemsByProductResponse                  *
+* xmlns="http://www.ebay.com/marketp...[100 of 2212]'                          *
+********************************************************************************
+INFO  2015-09-14 00:58:57,833 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1 Response
+INFO  2015-09-14 00:58:57,835 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Compare Result: [entities.product@3506ff, entities.product@15e5495]
+INFO  2015-09-14 00:59:00,959 [[vendasonline].http.requester.null(2) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:57316}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache

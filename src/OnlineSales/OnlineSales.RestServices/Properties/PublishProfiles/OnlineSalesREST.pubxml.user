@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\Publish\OnlineSalesREST</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/XmlDocument.xml">
+      <publishTime>04/12/2016 01:10:27</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/HelpPage.css">
+      <publishTime>07/12/2015 02:26:51</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/Api.cshtml">
+      <publishTime>04/05/2016 00:02:28</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml">
+      <publishTime>04/05/2016 00:03:04</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml">
+      <publishTime>04/05/2016 00:03:19</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml">
+      <publishTime>04/05/2016 00:03:49</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml">
+      <publishTime>04/05/2016 00:03:49</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml">
+      <publishTime>04/05/2016 00:03:49</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml">
+      <publishTime>04/05/2016 00:20:29</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml">
+      <publishTime>04/05/2016 00:19:58</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml">
+      <publishTime>04/05/2016 00:20:42</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml">
+      <publishTime>04/05/2016 00:20:49</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml">
+      <publishTime>04/05/2016 00:21:01</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml">
+      <publishTime>04/05/2016 00:21:21</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml">
+      <publishTime>07/12/2015 02:26:51</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml">
+      <publishTime>04/05/2016 00:21:28</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml">
+      <publishTime>04/05/2016 00:21:38</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/Index.cshtml">
+      <publishTime>04/05/2016 00:21:43</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/ResourceModel.cshtml">
+      <publishTime>04/05/2016 00:25:00</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Shared/_Layout.cshtml">
+      <publishTime>07/12/2015 02:26:51</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Web.config">
+      <publishTime>07/12/2015 02:26:51</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/_ViewStart.cshtml">
+      <publishTime>07/12/2015 02:26:51</publishTime>
+    </File>
+    <File Include="bin/App_Data/XmlDocument.xml">
+      <publishTime>04/12/2016 01:10:27</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/05/2016 00:11:43</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/05/2016 00:11:43</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>04/05/2016 00:11:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/05/2016 00:11:37</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/05/2016 00:11:42</publishTime>
+    </File>
+    <File Include="bin/OnlineSales.Data.dll">
+      <publishTime>04/06/2016 23:49:26</publishTime>
+    </File>
+    <File Include="bin/OnlineSales.RestServices.dll">
+      <publishTime>04/12/2016 01:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>04/05/2016 00:11:39</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>04/05/2016 00:11:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>04/05/2016 00:11:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>04/05/2016 00:11:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>04/05/2016 00:11:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>04/05/2016 00:11:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>04/05/2016 00:11:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>04/05/2016 00:11:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>04/05/2016 00:11:42</publishTime>
+    </File>
+    <File Include="bin/VendasOnline.Data.dll">
+      <publishTime>04/05/2016 00:18:35</publishTime>
+    </File>
+    <File Include="bin/VendasOnline.RestServices.dll">
+      <publishTime>04/06/2016 21:52:26</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/04/2016 23:59:57</publishTime>
+    </File>
+    <File Include="Log4Net.config">
+      <publishTime>07/15/2015 22:36:34</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/15/2015 22:14:03</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>06/07/2015 13:15:32</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/05/2016 00:54:59</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

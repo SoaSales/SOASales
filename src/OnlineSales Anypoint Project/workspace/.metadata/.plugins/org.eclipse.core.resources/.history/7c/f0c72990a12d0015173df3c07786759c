@@ -1,0 +1,64 @@
+package Transformers;
+
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageTransformer;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import Common.Constants;
+import entities.ProductIdentifier;
+import entities.product;
+
+public class ProductIdentifierTransformer extends AbstractMessageTransformer {
+
+	@Override
+	public Object transformMessage(MuleMessage message, String outputEncoding)
+			throws TransformerException {
+		
+		List<ProductIdentifier> productsIdentifiers = new ArrayList<>();	
+		String payload = (String)message.getPayload();
+		
+		DocumentBuilder db;
+		try {
+			db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			
+			//int initialPosition = payload.indexOf("<ns2:");
+		    //String identifiersXML = payload.substring(initialPosition);		
+		    
+		    InputSource is = new InputSource();
+		    is.setCharacterStream(new StringReader(payload));
+		    
+			Document doc = db.parse(is);
+			NodeList nodes = doc.getElementsByTagName("ven:ProductIdentifier");
+			
+			for(int i=0; i<nodes.getLength(); i++){
+				Element element = (Element)nodes.item(i);
+				
+				String productIdStr = element.getElementsByTagName("ven:ProductId").item(0).getTextContent();
+				int productId = Integer.parseInt(productIdStr);			   		   
+			 
+			    String quantityStr = element.getElementsByTagName("ven:VendorId").item(0).getTextContent();
+			    int vendorId = Integer.parseInt(quantityStr);			        
+			 
+			    productsIdentifiers.add(new ProductIdentifier(productId, vendorId));
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return productsIdentifiers;
+	}
+
+}

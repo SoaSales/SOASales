@@ -1,0 +1,75 @@
+package Transformers;
+
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.stream.StreamSource;
+
+import org.apache.cxf.staxutils.DepthXMLStreamReader;
+import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageTransformer;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import Common.Constants;
+import entities.product;
+
+public class BookToProductTransformers extends AbstractMessageTransformer {
+
+	@Override
+	public Object transformMessage(MuleMessage message, String outputEncoding)
+			throws TransformerException {
+		
+		List<product> productsList = new ArrayList<>();	
+		String payload = (String)message.getPayload();
+		
+		DocumentBuilder db;
+		try {
+			db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			
+			int initialPosition = payload.indexOf("<ns2:");
+		    String bookXML = payload.substring(initialPosition);		
+		    
+		    InputSource is = new InputSource();
+		    is.setCharacterStream(new StringReader(bookXML));
+		    
+			Document doc = db.parse(is);
+			NodeList nodes = doc.getElementsByTagName("return");
+			
+			for(int i=0; i<nodes.getLength(); i++){
+				Element element = (Element)nodes.item(i);
+				
+				String productIdStr = element.getElementsByTagName("BookId").item(0).getTextContent();
+				int id = Integer.parseInt(productIdStr);
+			    String name = element.getElementsByTagName("Title").item(0).getTextContent();
+			    String description = element.getElementsByTagName("Description").item(0).getTextContent();
+			    String category = "Book";			   
+			    String priceStr = element.getElementsByTagName("Price").item(0).getTextContent();
+			    Float price = Float.parseFloat(priceStr);
+			    String quantityStr = element.getElementsByTagName("Quantity").item(0).getTextContent();
+			    int quantity = Integer.parseInt(quantityStr);
+			        
+			    String otherInfo = "";
+			    NodeList authorsList = element.getElementsByTagName("Authors");
+			    
+			    for(int j=0; j<authorsList.getLength(); j++){
+			    	otherInfo += authorsList.item(j).getTextContent();
+			    }
+			    productsList.add(new product(id, Constants.LivrosOnlineId, name, description, price, quantity, category, otherInfo, Constants.LivrosOnlineName));
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return productsList;
+	}
+
+}

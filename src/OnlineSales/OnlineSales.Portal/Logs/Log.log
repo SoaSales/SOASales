@@ -1,0 +1,10 @@
+[Header]\r\n2016-04-05 00:46:28,820 [9] INFO  OnlineSales.Portal.Controllers.ProductController Request Compare
+[Header]\r\n2016-04-12 00:45:21,276 [15] INFO  OnlineSales.Portal.Controllers.ProductController Details request
+2016-04-12 00:45:23,650 [15] ERROR OnlineSales.Portal.Controllers.ProductController Details request
+System.Net.WebException: Não é possível estabelecer ligação com o servidor remoto ---> System.Net.Sockets.SocketException: Nenhuma ligação pôde ser feita porque o computador de destino
+as recusou ativamente 127.0.0.1:8081
+   em System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   em System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- Fim do rastreio da pilha de excepção interna ---
+   em System.Net.HttpWebRequest.GetResponse()
+   em OnlineSales.Portal.Controllers.ProductController.Details(Int64 productId, Int32 vendorId) em E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.Portal\Controllers\ProductController.cs:line 37

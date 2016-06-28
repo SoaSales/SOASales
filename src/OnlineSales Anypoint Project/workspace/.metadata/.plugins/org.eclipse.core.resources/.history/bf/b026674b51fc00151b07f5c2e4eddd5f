@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+    <ws:consumer-config name="ProductService" wsdlLocation="http://localhost/ProductService/Services/ProductsService.svc?wsdl" service="ProductsService" port="BasicHttpBinding_IProductsService" serviceAddress="http://localhost/ProductService/Services/ProductsService.svc" doc:name="Web Service Consumer"/>
+    <flow name="compareproductFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/CompareProducts" doc:name="HTTP"/>
+        <cxf:proxy-service namespace="http://tempuri.org/" service="CompareProductsService" payload="body" wsdlLocation="http://localhost/ProductService/Services/CompareProductsService.svc?Wsdl" doc:name="CXF"/>
+         <logger message="Compare Request - Payload: #[payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+         <custom-transformer class="Transformers.ProductIdentifierTransformer" doc:name="Create Products Identifiers List"/>
+        <set-variable variableName="productsToCompare" value=" #[payload.size()]" doc:name="Set number of products"/>
+        <scatter-gather doc:name="Scatter-Gather" timeout="90000">
+            <custom-aggregation-strategy class="aggregators.CompareResponseAggregator"/>
+            <processor-chain>
+                <logger message="Flow 1" level="INFO" doc:name="Logger"/>
+                <flow-ref name="Compare1" doc:name="Compare1"/>
+                <logger message="Flow 1 Response" level="INFO" doc:name="Logger"/>
+            </processor-chain>
+            <processor-chain>
+                <logger message="Flow 2" level="INFO" doc:name="Logger"/>
+                <flow-ref name="Compare2" doc:name="Compare2"/>
+                <logger message="Flow 2 Response" level="INFO" doc:name="Logger"/>
+            </processor-chain>
+            <processor-chain>
+                <logger message="Flow 3" level="INFO" doc:name="Logger"/>
+                <flow-ref name="Compare3" doc:name="Compare3"/>
+                <logger message="Flow 3 Response" level="INFO" doc:name="Logger"/>
+            </processor-chain>
+            <processor-chain>
+                <logger message="Flow 4" level="INFO" doc:name="Logger"/>
+                <flow-ref name="Compare4" doc:name="Compare4"/>
+                <logger message="Flow 4 Response" level="INFO" doc:name="Logger"/>
+            </processor-chain>
+        </scatter-gather>
+        <logger  level="INFO" doc:name="Logger" message="Compare Result: #[payload]"/>
+        <custom-transformer class="Transformers.CompareResponseTransformer" doc:name="Build Response"/>
+    </flow>
+    
+    
+    
+     
+    <flow name="Compare1">
+        <logger level="INFO" doc:name="Logger" message="FlowCompare 1  size:  #[flowVars.productsToCompare] payload  #[payload.size()] ///  #[message.payload.size() &gt; 0]    / #[message.payload.size()]"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.payload.size() &gt; 0]" >
+                <logger message="Compare 1 Flow vendor" level="INFO" doc:name="Logger"/>
+                 <set-variable variableName="vendor" value="#[payload[0].getVendorId()]" doc:name="Set Vendor"/>
+                <set-variable variableName="product" value="#[payload[0].getProductId()]" doc:name="Set Product"/>
+                <flow-ref name="compareproductsSub_Flow1" doc:name="compareproductsSub_Flow1"/>
+            </when>
+            <otherwise>
+                <logger message="Compare 1 Default - No product request" level="INFO" doc:name="Logger"/>
+                <set-payload value="#[null]" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    
+    <flow name="Compare2">
+        <logger level="INFO" doc:name="Logger" message="FlowCompare2 size:  #[flowVars.productsToCompare] payload  #[payload.size()]"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.payload.size() &gt; 1]" >
+                <logger message="Compare 2 Flow vendor" level="INFO" doc:name="Logger"/>
+                <set-variable variableName="vendor" value="#[payload[1].getVendorId()]" doc:name="Set Vendor"/>
+                <set-variable variableName="product" value="#[payload[1].getProductId()]" doc:name="Set Product"/>
+                <flow-ref name="compareproductsSub_Flow1" doc:name="compareproductsSub_Flow1"/>
+            </when>           
+            <otherwise>
+                <logger message="Compare 2 Default - No product request" level="INFO" doc:name="Logger"/>
+                <set-payload value="#[null]" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    
+    <flow name="Compare3">
+        <logger level="INFO" doc:name="Logger" message="FlowCompare 3 size:  #[flowVars.productsToCompare] payload  #[payload.size()]"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.payload.size() &gt; 2]" >
+                <logger message="Compare 3 Flow vendor" level="INFO" doc:name="Logger"/>
+                <set-variable variableName="vendor" value="#[payload[2].getVendorId()]" doc:name="Set Vendor"/>
+                <set-variable variableName="product" value="#[payload[2].getProductId()]" doc:name="Set Product"/>
+                <flow-ref name="compareproductsSub_Flow1" doc:name="compareproductsSub_Flow1"/>
+            </when>
+            <otherwise>
+                <logger message="Compare 3 Default - No product request" level="INFO" doc:name="Logger"/>
+                <set-payload value="#[null]" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    
+    <flow name="Compare4">
+        <logger level="INFO" doc:name="Logger" message="FlowCompare 4 size:  #[flowVars.productsToCompare] payload  #[payload.size()]"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.payload.size() &gt; 3]" >
+                <logger message="Compare 4 Flow vendor" level="INFO" doc:name="Logger"/>
+                <set-variable variableName="vendor" value="#[payload[3].getVendorId()]" doc:name="Set Vendor"/>
+                <set-variable variableName="product" value="#[payload[3].getProductId()]" doc:name="Set Product"/>
+                <flow-ref name="compareproductsSub_Flow1" doc:name="compareproductsSub_Flow1"/>
+            </when>
+            <otherwise>
+                <logger message="Compare 4 Default - No product request" level="INFO" doc:name="Logger"/>
+                <set-payload value="#[null]" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    
+    <flow name="compareproductsSub_Flow1">
+        <logger message="Choice Flow" level="INFO" doc:name="Logger"/>
+        <choice doc:name="Choice Vendor">
+            <when expression="#[flowVars.vendor == '2']">
+                <logger message="Choice Vendor:  #[flowVars.vendor]" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;ser:ViewBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[flowVars.product]&lt;/arg0&gt;&lt;/ser:ViewBook&gt;" doc:name="Set Payload"/>
+                <ws:consumer config-ref="ListingService" operation="ViewBook" doc:name="OnlineBooks"/>
+                <logger message="LivrosOnline RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.BookToProductTransformer" doc:name="Book Converter"/>
+            </when>
+            <when expression="#[flowVars.vendor == '3']">
+                <logger message="Ebay" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;urn:GetSingleItemRequest xmlns:urn=&quot;urn:ebay:apis:eBLBaseComponents&quot;&gt;&lt;urn:ItemID&gt;#[flowVars.product]&lt;/urn:ItemID&gt;&lt;/urn:GetSingleItemRequest&gt;" doc:name="Set Payload"/>
+                <flow-ref name="EbaySetVariablesFindByProduct" doc:name="EbaySetVariablesFindByProduct"/>
+                <ws:consumer config-ref="EbayShoppingService" operation="GetSingleItem" doc:name="Ebay"/>
+                <logger level="INFO" doc:name="Logger" message="EBAY RESULT"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.EbayProductToProductTransformer" doc:name="Ebay Converter"/>
+            </when>
+            <otherwise>
+                <logger message="DEFAULT REST id: #[flowVars.product]" level="INFO" doc:name="Logger"/>
+                <http:request config-ref="ProductsService" path="/#[flowVars.product]" method="GET" doc:name="OnlineSales">
+                    <http:request-builder/>
+                </http:request>
+                <logger message="VendasOnline RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.ProductToProductTransformer" doc:name="Product Converter"/>
+            </otherwise>
+        </choice>
+    </flow>      
+    
+</mule>

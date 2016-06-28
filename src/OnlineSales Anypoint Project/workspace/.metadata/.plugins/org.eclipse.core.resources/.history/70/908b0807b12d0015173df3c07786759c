@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ws="http://www.mulesoft.org/schema/mule/ws"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+
+
+  <flow name="searchProductFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/api/ProductsService/Search" doc:name="HTTP"/>
+        <scatter-gather doc:name="Scatter-Gather">
+            <custom-aggregation-strategy class="products.SearchResponseAggregator"/>
+            <processor-chain>
+                <logger message="Flow WCF -&gt; Scatter -  Query params: +   #[message.inboundProperties.'http.query.params'.searchParameters]" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ser:SearchBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[message.inboundProperties.'http.query.params'.searchParameters]&lt;/arg0&gt;&lt;/ser:SearchBook&gt;" doc:name="Set Payload"/>
+                <ws:consumer config-ref="ListingService" operation="SearchBook" doc:name="Web Service Consumer"/>
+                <echo-component doc:name="Echo"/>
+                <logger message="Flow WCF -&gt; RESULT + #[message.payload]" level="INFO" doc:name="Logger"/>
+            </processor-chain>
+            <processor-chain>
+                <logger message="Flow REST Scatter  -&gt;  Query params: +   #[message.inboundProperties.'http.query.params'.searchParameters]" level="INFO" doc:name="Logger"/>
+                <http:request config-ref="ProductsService" path="/Search" method="GET" doc:name="HTTP">
+                    <http:request-builder>
+                        <http:query-param paramName="searchParameters" value="#[message.inboundProperties.'http.query.params'.searchParameters]"/>
+                    </http:request-builder>
+                </http:request>
+                <echo-component doc:name="Echo"/>
+                <logger message="Flow REST  -&gt; RESULT + #[message.payload]" level="INFO" doc:name="Logger"/>
+            </processor-chain>
+        </scatter-gather>
+        <mulexml:object-to-xml-transformer doc:name="Object to XML"/>
+        <logger message="RESULT" level="INFO" doc:name="Logger"/>
+    </flow>
+
+</mule>

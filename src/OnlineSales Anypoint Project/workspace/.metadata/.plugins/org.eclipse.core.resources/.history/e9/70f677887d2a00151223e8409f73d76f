@@ -1,0 +1,10 @@
+package Common;
+
+public class Constants {
+
+	public final int VendasOnlineId = 1;
+	public final String VendasOnlineName = "Vendas Online";
+	
+	public final int LivrosOnlineId = 2;
+	public final String LivrosOnlineName = "Livros Online";
+}

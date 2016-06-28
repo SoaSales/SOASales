@@ -1,0 +1,1 @@
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.Portal\obj\Debug\OnlineSales.Portal.csprojResolveAssemblyReference.cache

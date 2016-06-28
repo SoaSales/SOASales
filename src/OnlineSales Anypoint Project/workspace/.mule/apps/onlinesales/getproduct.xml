@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:ws="http://www.mulesoft.org/schema/mule/ws"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+    <jms:object-to-jmsmessage-transformer name="Object_to_JMSMessage" doc:name="Object to JMSMessage"/>
+
+ <flow name="GetProduct">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/api/ProductsService/Get" doc:name="HTTP"/>
+        <logger message="GetProduct Request -  vendor: #[message.inboundProperties.'http.query.params'.vendor]  Id=#[message.inboundProperties.'http.query.params'.id] " level="INFO" doc:name="Logger"/>
+         <set-variable variableName="vendor" value="#[message.inboundProperties.'http.query.params'.vendor]" doc:name="Set Vendor Variable"/>
+        <set-variable variableName="product" value="#[message.inboundProperties.'http.query.params'.id]" doc:name="Set Product Variable"/>
+        <flow-ref name="getproductFlow" doc:name="getproductFlow"/>
+
+        <logger message="Get Product Result - Payload:  #[payload]" level="INFO" doc:name="Logger"/>
+        <mulexml:object-to-xml-transformer doc:name="Object to XML"/>
+        <jms:outbound-endpoint  connector-ref="Active_MQ" transformer-refs="Object_to_JMSMessage" doc:name="JMS" topic="RecentlyViewd">
+            <jms:transaction action="NONE"/>
+        </jms:outbound-endpoint>
+    </flow>
+    <flow name="getproductFlow">
+        <logger message="Get SubFlow  Vendor #[flowVars.vendor] and product #[flowVars.product]" level="INFO" doc:name="Logger"/>
+            <choice doc:name="Choice">
+            <when expression="#[flowVars.vendor == '2']">
+                <logger message="LivrosOnline" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;ser:ViewBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[flowVars.product]&lt;/arg0&gt;&lt;/ser:ViewBook&gt;" doc:name="Set Payload"/>
+                <ws:consumer config-ref="ListingService" operation="ViewBook" doc:name="OnlineBooks"/>
+                <logger message="Livros Online RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.BookListToProductListTransformer" doc:name="Book Converter"/>
+            </when>
+            <when expression="#[flowVars.vendor == '3']">
+                <logger message="Ebay" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;urn:GetSingleItemRequest xmlns:urn=&quot;urn:ebay:apis:eBLBaseComponents&quot;&gt;&lt;urn:ItemID&gt;#[flowVars.product]&lt;/urn:ItemID&gt;&lt;/urn:GetSingleItemRequest&gt;" doc:name="Set Payload"/>
+                <flow-ref name="EbaySetVariablesFindByProduct" doc:name="EbaySetVariablesFindByProduct"/>
+                <ws:consumer config-ref="EbayShoppingService" operation="GetSingleItem" doc:name="Ebay"/>
+                <logger level="INFO" doc:name="Logger" message="Ebay RESULT"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.EbayProductToProductTransformer" doc:name="Ebay Product Converter"/>
+            </when>
+            <otherwise>
+                <logger message="DEFAULT REST VendasOnline" level="INFO" doc:name="Logger"/>
+                <http:request config-ref="ProductsService" path="/#[flowVars.product]" method="GET" doc:name="OnlineSales">
+                    <http:request-builder>
+                    </http:request-builder>
+                </http:request>
+                <logger message="REST RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.ProductToProductTransformer" doc:name="Product Converter"/>
+            </otherwise>
+        </choice>
+    </flow>
+
+    <flow name="EbaySetVariablesFindByProduct">
+        <set-property propertyName="X-EBAY-API-CALL-NAME" value="GetSingleItem" doc:name="Property"/>
+        <set-property propertyName="X-EBAY-API-APP-ID" value="" doc:name="Property"/>
+        <set-property propertyName="X-EBAY-API-VERSION" value="935" doc:name="Property"/>
+    </flow>
+</mule>

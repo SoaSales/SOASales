@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="OnlineBooksDB" uuid="5c0095e0-346a-42c5-b1a1-fe080901f955">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="Books" schema="" catalog="" type="TABLE">
+      <column name="BookId" sqlType="INT" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="Title" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="Author" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="Description" sqlType="VARCHAR(250)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Price" sqlType="FLOAT" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="Quantity" sqlType="INT" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="bookid"/>
+    </table>
+  </data-source>
+</component>

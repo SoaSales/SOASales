@@ -1,0 +1,8 @@
+1435709751334	Rename type 'AgregateSearchResponses'
+1435710281687	Extract local variable 'payload'
+1435791943130	Delete element
+1435791951159	Delete element
+1435791957268	Delete element
+1435870954309	Delete element
+1435883263216	Rename package 'Converters'
+1435884118834	Rename type 'ProductJsonConverter'

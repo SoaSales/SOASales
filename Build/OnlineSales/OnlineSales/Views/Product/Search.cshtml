@@ -1,0 +1,146 @@
+﻿@model OnlineSales.Portal.Models.ProductSearchModel
+
+
+@{
+    ViewBag.Title = @Resources.Resources.ProductSearch;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section scripts
+ {
+    <script type="text/javascript">
+        var table;
+        var selectedProducts;
+
+        $(document).ready(function () {
+            selectedProducts = 0;
+
+            table = $('#searchResultsTable').DataTable({
+                "columnDefs": [
+                    {
+                        "targets": [0],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [1],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [2],
+                        "orderable": false
+                    },
+                    {
+                        "targets": [8],
+                        "orderable": false
+                    }
+                ]
+            });
+        });
+
+        function addRemoveItem(object, productId, vendorId) {
+            var url;
+            var adding = true;
+
+            if ($(object).is(':checked')) {
+                url = "/OnlineSales/Product/AddCompareItem?productId=" + productId + "&vendorId=" + vendorId;
+            } else {
+                url = "/OnlineSales/Product/RemoveCompareItem?productId=" + productId + "&vendorId=" + vendorId;
+                adding = false;
+            }
+
+            $.get(url, null, function () {
+
+                if (adding) {
+                    selectedProducts = selectedProducts + 1;
+                } else {
+                    selectedProducts = selectedProducts - 1;
+                }
+                if (selectedProducts == 4) {
+                    $("input[type=checkbox]:not(:checked)").attr('disabled', 'disabled');
+                } else {
+                    $("input[type=checkbox]").removeAttr('disabled');
+                }
+
+                if (selectedProducts == 0) {
+                    $("#btnCompare").attr('disabled', 'disabled');
+                } else {
+                    $("#btnCompare").removeAttr('disabled');
+                }
+            });
+        }
+    </script>
+}
+<div class="jumbotron">
+    <h2>@ViewBag.Title</h2>
+
+    @using (Html.BeginForm("SearchProduct", "Product"))
+    { <p>
+        @Html.TextBoxFor(m => m.SearchParameters, htmlAttributes: new { style = "max-width:80%; width:80%;" })
+        <input type="submit" value=@Resources.Resources.Search style="float:right" />
+    </p>
+    }
+
+</div>
+@using (Html.BeginForm("Compare", "Product"))
+{
+    <div class="active">
+        <p style="height: 35px;">
+            <input type="submit" id="btnCompare" value=@Resources.Resources.Compare style="float:left" disabled />
+        </p>
+    </div>
+    <table id="searchResultsTable" class="display">
+        <thead>
+            <tr>
+                <th class="noDisplay"></th>
+                <th class="noDisplay"></th>
+                <th class="noDisplay"></th>
+                <th>
+                    @Resources.Resources.Name
+                </th>
+                <th>
+                    @Resources.Resources.Description
+                </th>
+                <th>
+                    @Resources.Resources.Price
+                </th>
+                <th>
+                    @Resources.Resources.Category
+
+                </th>
+                <th>@Resources.Resources.Seller</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ProductsList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ProductId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.VendorId)</td>
+                    <td>@Html.CheckBox("compareCheckbox", new { @onclick = "addRemoveItem(this," + item.ProductId + "," + item.VendorId + ")" })</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.VendorName)</td>
+                    <td>
+                        @Html.ActionLink(@Resources.Resources.Details, "Details", new { productid = item.ProductId, vendorId = item.VendorId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

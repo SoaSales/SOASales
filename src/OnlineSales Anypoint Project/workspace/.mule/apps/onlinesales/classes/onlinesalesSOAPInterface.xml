@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+    <spring:beans>
+        <spring:bean id="objectStore" class="org.mule.util.store.SimpleMemoryObjectStore"/>
+    </spring:beans>
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" basePath="/OnlineSales" doc:name="HTTP Listener Configuration"/>
+    <http:request-config name="ProductsService" host="localhost" port="80" doc:name="HTTP Request Configuration" basePath="/FindProductsService/api/products"/>
+    <ws:consumer-config name="ListingService" wsdlLocation="http://localhost:9090/OnlineBooks/services/ListingService?wsdl" service="ListingServiceService" port="ListingServicePort" serviceAddress="http://localhost:9090/OnlineBooks/services/ListingService" doc:name="Web Service Consumer"/>
+    <ws:consumer-config name="EbayFindingService" wsdlLocation="https://developer.ebay.com/webservices/finding/latest/FindingService.wsdl" service="FindingService" port="FindingServiceSOAPPort" serviceAddress="https://svcs.ebay.com/services/search/FindingService/v1" doc:name="Web Service Consumer"/>
+    <jms:activemq-connector name="Active_MQ" username="system" password="manager" brokerURL="tcp://localhost:61616" validateConnections="true" doc:name="Active MQ" durable="true"/>
+    <http:request-config name="BasicProductService" host="localhost" port="80" basePath="/BasicFindProductsService/api/products" doc:name="HTTP Request Configuration"/>
+    <ws:consumer-config name="EbayShoppingService" wsdlLocation="http://developer.ebay.com/webservices/935/ShoppingService.wsdl" service="Shopping" port="Shopping" serviceAddress="http://open.api.ebay.com/shopping" doc:name="Web Service Consumer"/>
+    <flow name="vendasonlineFlow1">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/ProductsService" doc:name="HTTP">
+            <http:response-builder statusCode="200"/>
+        </http:listener>
+        <cxf:proxy-service namespace="http://tempuri.org/" service="ProductsService" payload="body" wsdlLocation="http://localhost/ProductService/Services/ProductsService.svc?Wsdl" doc:name="ProxyProductsService"/>
+        <echo-component doc:name="Echo"/>
+        <custom-transformer class="Transformers.SoapRequestTransformer" doc:name="Java"/>
+        <choice doc:name="Choice">
+            <when expression="#[payload.getOperation() == 'SearchProduct']">
+                <logger message="Search Product" level="INFO" doc:name="Logger"/>
+                <set-payload value="Not Implemented" doc:name="Set Payload"/>
+            </when>
+            <when expression="#[payload.getOperation() == 'CompareProducts']">
+                <logger message="Compare Products" level="INFO" doc:name="Logger"/>
+                <set-payload value="Not Implemented" doc:name="Set Payload"/>
+            </when>
+            <when expression="#[payload.getOperation() == 'ViewProduct']">
+                <logger message="View Product" level="INFO" doc:name="Logger"/>
+                <flow-ref name="vendasonlineViewProductFlow" doc:name="vendasonlineViewProductFlow"/>
+               
+            </when>
+            <otherwise>
+                <logger message="Invalid Operattion" level="ERROR" doc:name="Logger"/>
+            </otherwise>
+        </choice>
+        <logger level="INFO" doc:name="Logger"/>
+        <mulexml:object-to-xml-transformer doc:name="Object to XML"/>
+        <logger message="RESULT: #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="vendasonlineViewProductFlow">
+    	 <set-variable variableName="vendor" value="#[payload.getVendor()]" doc:name="Variable"/>
+                <set-variable variableName="product" value="#[payload.getProduct()]" doc:name="Variable"/>
+                <flow-ref name="getproductFlow" doc:name="getproductFlow"/>
+                <logger message="RESULT View Product #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="vendasonlineSearchProductsFlow">
+        <set-variable variableName="searchParameters" value="#[message.inboundProperties.'http.query.params'.searchParameters]" doc:name="SetSearchParametersVariable"/>
+        <flow-ref name="searchProductFlow" doc:name="searchProductFlow"/>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

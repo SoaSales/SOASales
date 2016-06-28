@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="NewPersistenceUnit" value="5c0095e0-346a-42c5-b1a1-fe080901f955" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </sourceRoots>
+      </configuration>
+      <facet type="webservices" name="WebServices">
+        <configuration ws.engine="Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" />
+      </facet>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Resource" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat" level="application_server_libraries" />
+    <orderEntry type="library" name="opencsv-3.4" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.6.20.1" level="project" />
+    <orderEntry type="library" name="javax.persistence" level="project" />
+    <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
+    <orderEntry type="library" name="hibernate-entitymanager-4.2.3" level="project" />
+    <orderEntry type="library" name="apache-log4j-2" level="project" />
+  </component>
+</module>

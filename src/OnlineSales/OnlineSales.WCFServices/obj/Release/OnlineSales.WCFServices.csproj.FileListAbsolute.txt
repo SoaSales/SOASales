@@ -1,0 +1,12 @@
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll.config
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\bin\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\obj\Release\OnlineSales.WCFServices.csprojResolveAssemblyReference.cache
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\obj\Release\VendasOnline.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\VendasOnline.WCFServices\obj\Release\VendasOnline.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.WCFServices\obj\Release\OnlineSales.WCFServices.csprojResolveAssemblyReference.cache
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.WCFServices\bin\OnlineSales.WCFServices.dll.config
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.WCFServices\bin\OnlineSales.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.WCFServices\bin\OnlineSales.WCFServices.pdb
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.WCFServices\obj\Release\OnlineSales.WCFServices.dll
+E:\ISEC\Mestrado\Projeto\Versionamento\Implementacao\DotNet\OnlineSales\OnlineSales.WCFServices\obj\Release\OnlineSales.WCFServices.pdb

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = Resources.Resources.Home;
+}
+
+<div class="jumbotron">
+    <h1>@Resources.Resources.OnlineSales</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Resources.Resources.ProductSearch</h2>
+        <p>
+            @Resources.Resources.SearchProductTextP1
+        </p>
+        <p>
+            @Resources.Resources.SearchProductTextP2
+        </p>
+        <p class="btn btn-default">
+            @Html.ActionLink(@Resources.Resources.ProductSearch, "Search", "Product", routeValues: null, htmlAttributes: new { id = "searchProduct" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Resources.Resources.ProductDetails</h2>
+        <p>@Resources.Resources.ProductDetailText</p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Resources.Resources.CompareProducts</h2>
+        <p>@Resources.Resources.CompareProductTextP1</p>
+        <p>@Resources.Resources.CompareProductTextP2</p>
+    </div>
+</div>

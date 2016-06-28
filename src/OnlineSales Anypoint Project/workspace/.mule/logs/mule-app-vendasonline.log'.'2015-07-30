@@ -1,0 +1,599 @@
+INFO  2015-07-30 23:55:15,934 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'vendasonline'                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-07-30 23:55:16,340 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2015-07-30 23:55:16,808 [main] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@a2e43: startup date [Thu Jul 30 23:55:16 BST 2015]; root of context hierarchy
+WARN  2015-07-30 23:55:18,541 [main] org.mule.transport.http.config.HttpResponseBuilderDefinitionParser: Schema warning: Use of element <response-builder> is deprecated.  HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead..
+WARN  2015-07-30 23:55:20,710 [main] org.mule.module.ognl.expression.OgnlExpressionEvaluator: OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+INFO  2015-07-30 23:55:22,411 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx2.log
+INFO  2015-07-30 23:55:22,444 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx2.log
+INFO  2015-07-30 23:55:22,506 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2015-07-30 23:55:23,364 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow1
+INFO  2015-07-30 23:55:23,364 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1bf4c9d
+INFO  2015-07-30 23:55:23,426 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow1.stage1
+INFO  2015-07-30 23:55:23,442 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.15941534
+INFO  2015-07-30 23:55:25,830 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: searchProductFlow
+INFO  2015-07-30 23:55:25,830 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@2e19f4
+INFO  2015-07-30 23:55:25,830 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: searchProductFlow.stage1
+INFO  2015-07-30 23:55:25,893 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.21694001
+INFO  2015-07-30 23:55:25,893 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.15619992
+INFO  2015-07-30 23:55:26,236 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: SearchProduct
+INFO  2015-07-30 23:55:26,236 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@128345a
+INFO  2015-07-30 23:55:26,236 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: SearchProduct.stage1
+INFO  2015-07-30 23:55:26,236 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.14772860
+INFO  2015-07-30 23:55:26,377 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow
+INFO  2015-07-30 23:55:26,377 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1c90b7c
+INFO  2015-07-30 23:55:26,377 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow.stage1
+INFO  2015-07-30 23:55:26,377 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.2932206
+WARN  2015-07-30 23:55:26,548 [main] org.mule.transport.http.HttpConnector: HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead.
+INFO  2015-07-30 23:55:26,720 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: connector.http.mule.default
+INFO  2015-07-30 23:55:27,172 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.11197893
+INFO  2015-07-30 23:55:27,314 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow1
+INFO  2015-07-30 23:55:27,314 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@105f774
+INFO  2015-07-30 23:55:27,314 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow1.stage1
+INFO  2015-07-30 23:55:27,314 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.7277464
+INFO  2015-07-30 23:55:27,314 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.13138775
+INFO  2015-07-30 23:55:27,314 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.24139895
+INFO  2015-07-30 23:55:27,376 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.15502492
+INFO  2015-07-30 23:55:27,532 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: GetProduct
+INFO  2015-07-30 23:55:27,532 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@34113f
+INFO  2015-07-30 23:55:27,532 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: GetProduct.stage1
+INFO  2015-07-30 23:55:27,595 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.5156608
+INFO  2015-07-30 23:55:27,595 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.6439612
+INFO  2015-07-30 23:55:27,751 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductsSub_Flow1
+INFO  2015-07-30 23:55:27,751 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@88b69c
+INFO  2015-07-30 23:55:27,751 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductsSub_Flow1.stage1
+INFO  2015-07-30 23:55:27,797 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.577881
+INFO  2015-07-30 23:55:27,797 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.10497871
+INFO  2015-07-30 23:55:27,813 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare1
+INFO  2015-07-30 23:55:27,813 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@c60c1a
+INFO  2015-07-30 23:55:27,813 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare1.stage1
+INFO  2015-07-30 23:55:27,829 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare2
+INFO  2015-07-30 23:55:27,829 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@16fcbcf
+INFO  2015-07-30 23:55:27,829 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare2.stage1
+INFO  2015-07-30 23:55:27,844 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare3
+INFO  2015-07-30 23:55:27,844 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1446214
+INFO  2015-07-30 23:55:27,844 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare3.stage1
+INFO  2015-07-30 23:55:27,860 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare4
+INFO  2015-07-30 23:55:27,860 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@369200
+INFO  2015-07-30 23:55:27,860 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare4.stage1
+INFO  2015-07-30 23:55:27,891 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: comparetestFlow
+INFO  2015-07-30 23:55:27,891 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1d97b65
+INFO  2015-07-30 23:55:27,891 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: comparetestFlow.stage1
+INFO  2015-07-30 23:55:29,810 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.20046490
+INFO  2015-07-30 23:55:30,014 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductsFlow
+INFO  2015-07-30 23:55:30,014 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@ea1716
+INFO  2015-07-30 23:55:30,014 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductsFlow.stage1
+INFO  2015-07-30 23:55:30,029 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.294424
+INFO  2015-07-30 23:55:30,076 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.20911576
+INFO  2015-07-30 23:55:30,076 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.16614133
+INFO  2015-07-30 23:55:30,107 [main] org.mule.config.spring.SpringXmlConfigurationBuilder: Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-07-30 23:55:30,107 [main] org.mule.config.builders.AutoConfigurationBuilder: Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-07-30 23:55:30,107 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'vendasonline'                              +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-07-30 23:55:30,123 [main] org.mule.util.queue.QueueXaResourceManager: Starting ResourceManager
+INFO  2015-07-30 23:55:30,123 [main] org.mule.util.queue.QueueXaResourceManager: Started ResourceManager
+INFO  2015-07-30 23:55:30,154 [main] org.mule.transport.http.HttpConnector: Connected: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=11f27d
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-07-30 23:55:30,154 [main] org.mule.transport.http.HttpConnector: Starting: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=11f27d
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-07-30 23:55:30,154 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: connector.http.mule.default
+INFO  2015-07-30 23:55:30,154 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting model: _muleSystemModel
+INFO  2015-07-30 23:55:30,154 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow1
+INFO  2015-07-30 23:55:30,154 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow1.stage1
+INFO  2015-07-30 23:55:30,154 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.15941534
+INFO  2015-07-30 23:55:30,170 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: searchProductFlow
+INFO  2015-07-30 23:55:30,170 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: searchProductFlow.stage1
+INFO  2015-07-30 23:55:30,170 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.21694001
+INFO  2015-07-30 23:55:30,170 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.15619992
+INFO  2015-07-30 23:55:30,170 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: SearchProduct
+INFO  2015-07-30 23:55:30,170 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: SearchProduct.stage1
+INFO  2015-07-30 23:55:30,170 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.14772860
+INFO  2015-07-30 23:55:30,170 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow
+INFO  2015-07-30 23:55:30,170 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow.stage1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.2932206
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.11197893
+INFO  2015-07-30 23:55:30,185 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow1.stage1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.7277464
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.13138775
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.24139895
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.15502492
+INFO  2015-07-30 23:55:30,185 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: GetProduct
+INFO  2015-07-30 23:55:30,185 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: GetProduct.stage1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.5156608
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.6439612
+INFO  2015-07-30 23:55:30,185 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: comparetestFlow
+INFO  2015-07-30 23:55:30,185 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: comparetestFlow.stage1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.20046490
+INFO  2015-07-30 23:55:30,185 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare1.stage1
+INFO  2015-07-30 23:55:30,185 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare2
+INFO  2015-07-30 23:55:30,185 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare2.stage1
+INFO  2015-07-30 23:55:30,201 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare3
+INFO  2015-07-30 23:55:30,201 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare3.stage1
+INFO  2015-07-30 23:55:30,201 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare4
+INFO  2015-07-30 23:55:30,201 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare4.stage1
+INFO  2015-07-30 23:55:30,201 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductsSub_Flow1
+INFO  2015-07-30 23:55:30,201 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductsSub_Flow1.stage1
+INFO  2015-07-30 23:55:30,201 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.577881
+INFO  2015-07-30 23:55:30,201 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.10497871
+INFO  2015-07-30 23:55:30,201 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductsFlow
+INFO  2015-07-30 23:55:30,201 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductsFlow.stage1
+INFO  2015-07-30 23:55:30,201 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.294424
+INFO  2015-07-30 23:55:30,201 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.20911576
+INFO  2015-07-30 23:55:30,201 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.16614133
+INFO  2015-07-30 23:55:30,232 [main] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Listening for requests on http://0.0.0.0:8081/VendasOnline
+INFO  2015-07-30 23:55:30,232 [main] org.mule.module.management.agent.WrapperManagerAgent: This JVM hasn't been launched by the wrapper, the agent will not run.
+INFO  2015-07-30 23:55:30,263 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="connector.http.mule.default.1"
+INFO  2015-07-30 23:55:30,279 [main] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Application: vendasonline                                          *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+**********************************************************************
+INFO  2015-07-30 23:57:34,065 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> Scatter -  Query params: +   linguagem + 
+org.mule.DefaultMuleMessage
+{
+  id=5d4d6050-370e-11e5-a61b-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4260
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-07-30 23:57:34,065 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST Scatter  ->  Query params: +   linguagem + + 
+org.mule.DefaultMuleMessage
+{
+  id=5d4d6050-370e-11e5-a61b-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4260
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-07-30 23:57:34,643 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 854]'                       *
+********************************************************************************
+INFO  2015-07-30 23:57:34,659 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> RESULT + <?xml version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse xmlns:ns2="http://Services/"><return><BookId>2</BookId><Title>Linguagem C</Title><Authors>LuÃ­s Damas</Authors><Description/><Price>30.5</Price><Quantity>10</Quantity><authors>LuÃ­s Damas</authors><bookId>2</bookId><description/><price>30.5</price><quantity>10</quantity><title>Linguagem C</title></return><return><BookId>6</BookId><Title>C# 4.0</Title><Authors>Ricardo Figueira</Authors><Authors>HernÃ¢ni Pedroso</Authors><Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description><Price>36.25</Price><Quantity>20</Quantity><authors>Ricardo Figueira</authors><authors>HernÃ¢ni Pedroso</authors><bookId>6</bookId><description>Livro sobre a linguagem de programaÃ§Ã£o C#</description><price>36.25</price><quantity>20</quantity><title>C# 4.0</title></return></ns2:SearchBookResponse>
+INFO  2015-07-30 23:57:39,994 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> Scatter -  Query params: +   linguagem + 
+org.mule.DefaultMuleMessage
+{
+  id=60eddfa0-370e-11e5-a61b-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4261
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-07-30 23:57:39,994 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow REST Scatter  ->  Query params: +   linguagem + + 
+org.mule.DefaultMuleMessage
+{
+  id=60eddfa0-370e-11e5-a61b-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4261
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-07-30 23:57:40,010 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 854]'                       *
+********************************************************************************
+INFO  2015-07-30 23:57:40,010 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> RESULT + <?xml version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse xmlns:ns2="http://Services/"><return><BookId>2</BookId><Title>Linguagem C</Title><Authors>LuÃ­s Damas</Authors><Description/><Price>30.5</Price><Quantity>10</Quantity><authors>LuÃ­s Damas</authors><bookId>2</bookId><description/><price>30.5</price><quantity>10</quantity><title>Linguagem C</title></return><return><BookId>6</BookId><Title>C# 4.0</Title><Authors>Ricardo Figueira</Authors><Authors>HernÃ¢ni Pedroso</Authors><Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description><Price>36.25</Price><Quantity>20</Quantity><authors>Ricardo Figueira</authors><authors>HernÃ¢ni Pedroso</authors><bookId>6</bookId><description>Livro sobre a linguagem de programaÃ§Ã£o C#</description><price>36.25</price><quantity>20</quantity><title>C# 4.0</title></return></ns2:SearchBookResponse>
+INFO  2015-07-30 23:57:40,915 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de   *
+* programação C#","Price":36...[100 of 592]'                                   *
+********************************************************************************
+INFO  2015-07-30 23:57:40,915 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de   *
+* programação C#","Price":36...[100 of 592]'                                   *
+********************************************************************************
+INFO  2015-07-30 23:57:40,915 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST  -> RESULT + [{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de programação C#","Price":36.25,"Quantity":20,"Category":"Book","Other_Info":"Ricardo Figueira,Hernâni Pedroso  "},{"ProductId":3,"Name":"C# 3.5","Description":"Linguagem C#","Price":27.5,"Quantity":15,"Category":"Book","Other_Info":"Paulo Marques,Ricardo Figueira  "},{"ProductId":8,"Name":"Head First C#","Description":"Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.","Price":20.8,"Quantity":10,"Category":"Book","Other_Info":"Dennis M. Ritchie,Brian W. Kernighan"}]
+INFO  2015-07-30 23:57:40,915 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow REST  -> RESULT + [{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de programação C#","Price":36.25,"Quantity":20,"Category":"Book","Other_Info":"Ricardo Figueira,Hernâni Pedroso  "},{"ProductId":3,"Name":"C# 3.5","Description":"Linguagem C#","Price":27.5,"Quantity":15,"Category":"Book","Other_Info":"Paulo Marques,Ricardo Figueira  "},{"ProductId":8,"Name":"Head First C#","Description":"Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.","Price":20.8,"Quantity":10,"Category":"Book","Other_Info":"Dennis M. Ritchie,Brian W. Kernighan"}]
+INFO  2015-07-30 23:57:41,118 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: RESULT 
+org.mule.DefaultMuleMessage
+{
+  id=5d4d6050-370e-11e5-a61b-005056be0d94
+  payload=java.util.ArrayList
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4260
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-07-30 23:57:41,118 [[vendasonline].HTTP_Listener_Configuration.worker.02] org.mule.api.processor.LoggerMessageProcessor: RESULT 
+org.mule.DefaultMuleMessage
+{
+  id=60eddfa0-370e-11e5-a61b-005056be0d94
+  payload=java.util.ArrayList
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4261
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-07-30 23:57:41,166 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: RESULT Message: 
+org.mule.DefaultMuleMessage
+{
+  id=5d4d6050-370e-11e5-a61b-005056be0d94
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4260
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}  Payload: <list>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>2</VendorId>
+    <Name>Linguagem C</Name>
+    <Description></Description>
+    <Price>30.5</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>LuÃ­s Damas</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>6</ProductId>
+    <VendorId>2</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description>
+    <Price>36.25</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo FigueiraHernÃ¢ni Pedroso</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programação C#</Description>
+    <Price>20.0</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo Figueira,Hernâni Pedroso  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>3</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 3.5</Name>
+    <Description>Linguagem C#</Description>
+    <Price>15.0</Price>
+    <Quantity>15</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Paulo Marques,Ricardo Figueira  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>8</ProductId>
+    <VendorId>1</VendorId>
+    <Name>Head First C#</Name>
+    <Description>Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.</Description>
+    <Price>10.0</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Dennis M. Ritchie,Brian W. Kernighan</Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+</list>
+INFO  2015-07-30 23:57:41,166 [[vendasonline].HTTP_Listener_Configuration.worker.02] org.mule.api.processor.LoggerMessageProcessor: RESULT Message: 
+org.mule.DefaultMuleMessage
+{
+  id=60eddfa0-370e-11e5-a61b-005056be0d94
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/193.137.78.17:4261
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}  Payload: <list>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>2</VendorId>
+    <Name>Linguagem C</Name>
+    <Description></Description>
+    <Price>30.5</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>LuÃ­s Damas</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>6</ProductId>
+    <VendorId>2</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description>
+    <Price>36.25</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo FigueiraHernÃ¢ni Pedroso</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programação C#</Description>
+    <Price>20.0</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo Figueira,Hernâni Pedroso  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>3</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 3.5</Name>
+    <Description>Linguagem C#</Description>
+    <Price>15.0</Price>
+    <Quantity>15</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Paulo Marques,Ricardo Figueira  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>8</ProductId>
+    <VendorId>1</VendorId>
+    <Name>Head First C#</Name>
+    <Description>Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.</Description>
+    <Price>10.0</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Dennis M. Ritchie,Brian W. Kernighan</Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+</list>
+INFO  2015-07-30 23:57:52,351 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: START
+INFO  2015-07-30 23:57:52,351 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: comparetestFlow. Content is: '<?xml             *
+* version="1.0" encoding="UTF-8"?><CompareProducts                             *
+* xmlns="http://tempuri.org/"><products><Produc...[100 of 710]'                *
+********************************************************************************
+INFO  2015-07-30 23:57:52,367 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Before Scatter [entities.ProductIdentifier@132c58b, entities.ProductIdentifier@474917, entities.ProductIdentifier@f9488]  count 3
+INFO  2015-07-30 23:57:52,367 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2
+INFO  2015-07-30 23:57:52,367 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1
+INFO  2015-07-30 23:57:52,383 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3
+INFO  2015-07-30 23:57:52,383 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4
+INFO  2015-07-30 23:57:52,415 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 4 size:   3 payload  3
+INFO  2015-07-30 23:57:52,415 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: FlowCompare2 size:   3 payload  3
+INFO  2015-07-30 23:57:52,415 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 3 size:   3 payload  3
+INFO  2015-07-30 23:57:52,430 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Compare 2 Flow vendor
+INFO  2015-07-30 23:57:52,430 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Compare 3 Flow vendor
+INFO  2015-07-30 23:57:52,430 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Compare 4 Default - No product request
+INFO  2015-07-30 23:57:52,430 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 1  size:   3 payload  3 ///  true    / 3
+INFO  2015-07-30 23:57:52,430 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Compare 1 Flow vendor
+INFO  2015-07-30 23:57:52,446 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4 Response
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Before coice 2   Variaveis vendor 2   product null
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Before coice 2    Variaveis vendor 1   product 2
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Before coice 3    Variaveis vendor 1   product 3
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: DEFAULT REST id: 2
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: DEFAULT REST id: 3
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Vendor:  2
+INFO  2015-07-30 23:57:52,461 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: SOAP REQUEST <ser:ViewBook xmlns:ser="http://Services/"><arg0>2</arg0></ser:ViewBook>
+INFO  2015-07-30 23:57:52,508 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: SOAP RESULT
+INFO  2015-07-30 23:57:52,524 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is: '<?xml    *
+* version="1.0" encoding="UTF-8"?><ns2:ViewBookResponse                        *
+* xmlns:ns2="http://Services/"><return><Bo...[100 of 389]'                     *
+********************************************************************************
+INFO  2015-07-30 23:57:52,524 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice RESULT
+INFO  2015-07-30 23:57:52,524 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1 Response
+INFO  2015-07-30 23:57:52,992 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: REST RESULT
+INFO  2015-07-30 23:57:52,992 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: REST RESULT
+INFO  2015-07-30 23:57:52,992 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is:           *
+* '{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de    *
+* programação C#","Price":36....[100 of 185]'                                  *
+********************************************************************************
+INFO  2015-07-30 23:57:52,992 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is:           *
+* '{"ProductId":3,"Name":"C# 3.5","Description":"Linguagem                     *
+* C#","Price":27.5,"Quantity":15,"Category":"B...[100 of 153]'                 *
+********************************************************************************
+INFO  2015-07-30 23:57:52,992 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Choice RESULT
+INFO  2015-07-30 23:57:52,992 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Choice RESULT
+INFO  2015-07-30 23:57:53,007 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2 Response
+INFO  2015-07-30 23:57:53,007 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3 Response
+INFO  2015-07-30 23:57:53,023 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: After Scatter
+INFO  2015-07-30 23:57:53,023 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Return Response Payload: <?xml version="1.0" encoding="UTF-8"?><CompareProductsResponse xmlns="http://tempuri.org/"><CompareProductsResult xmlns:a="http://schemas.datacontract.org/2004/07/VendasOnline.WCFServices.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><a:ProductsDataContract><a:Category>Book</a:Category><a:Description></a:Description><a:Name>Linguagem C</a:Name><a:Other_Info>LuÃ­s Damas</a:Other_Info><a:Price>30.5</a:Price><a:ProductId>2</a:ProductId><a:Quantity>10</a:Quantity><a:VendorId>2</a:VendorId><a:VendorName>Livros Online</a:VendorName></a:ProductsDataContract><a:ProductsDataContract><a:Category>Book</a:Category><a:Description>Livro sobre a linguagem de programação C#</a:Description><a:Name>C# 4.0</a:Name><a:Other_Info>Ricardo Figueira,Hernâni Pedroso  </a:Other_Info><a:Price>20.0</a:Price><a:ProductId>2</a:ProductId><a:Quantity>20</a:Quantity><a:VendorId>1</a:VendorId><a:VendorName>Vendas Online</a:VendorName></a:ProductsDataContract><a:ProductsDataContract><a:Category>Book</a:Category><a:Description>Linguagem C#</a:Description><a:Name>C# 3.5</a:Name><a:Other_Info>Paulo Marques,Ricardo Figueira  </a:Other_Info><a:Price>15.0</a:Price><a:ProductId>3</a:ProductId><a:Quantity>15</a:Quantity><a:VendorId>1</a:VendorId><a:VendorName>Vendas Online</a:VendorName></a:ProductsDataContract> </CompareProductsResult></CompareProductsResponse>

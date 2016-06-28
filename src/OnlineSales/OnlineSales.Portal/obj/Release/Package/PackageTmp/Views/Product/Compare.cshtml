@@ -1,0 +1,125 @@
+﻿@model OnlineSales.Portal.Models.ProductCompareModel
+
+@{
+    ViewBag.Title = @Resources.Resources.CompareProducts;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts
+ {
+    <script type="text/javascript">
+        var table;
+
+        $(document).ready(function () {
+            table = $('#CompareTable').DataTable({
+                paging: false,
+                ordering: false,
+                bFilter: false,
+                bInfo: false
+            });
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+@if (@Model.ProductsList.Count > 0)
+{
+    <div>
+        <table id="CompareTable" class="display">
+            <thead>
+                <tr>
+                    <th rowspan="2">@Resources.Resources.Property</th>
+                    <th style="text-align:center;" colspan="@Model.ProductsList.Count">@Resources.Resources.Product</th>
+                </tr>
+                <tr>
+                    @foreach (var item in Model.ProductsList)
+                    {
+                        <th>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>                  
+                    <tr>
+                        <th>
+                            @Resources.Resources.Description
+                        </th>
+                        @foreach (var item in Model.ProductsList)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <th>
+                            @Resources.Resources.Price
+                        </th>
+                        @foreach (var item in Model.ProductsList)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <th>
+                            @Resources.Resources.Category
+                        </th>
+                        @foreach (var item in Model.ProductsList)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <th>@Resources.Resources.Seller</th>
+                        @foreach (var item in Model.ProductsList)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VendorName)
+                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <th>
+                            @Resources.Resources.AditionalInfo
+                        </th>
+                        @foreach (var item in Model.ProductsList)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Other_Info)
+                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <th>
+                            @Resources.Resources.Quantity
+                        </th>
+                        @foreach (var item in Model.ProductsList)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+                        }
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="margin:20px;">
+        <p>@Resources.Resources.NoRecords</p>
+    </div>
+}
+<div style="margin:30px 0px;">
+    <p>
+        @Html.ActionLink(@Resources.Resources.ReturnToSearch, "Search")
+    </p>
+</div>

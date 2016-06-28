@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:email="http://www.mulesoft.org/schema/mule/email" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd">
+    
+    <flow name="productsflowFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/ProductsService/test" doc:name="HTTP"/>
+        <logger message="Test + #[payload] + #[message.inboundProperties] + #[message.outboundProperties] +Payload:  #[message.payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+        <cxf:proxy-service namespace="http://Services/" service="ListingServiceService" payload="body" wsdlLocation="http://localhost:9090/LivrosOnline/services/ListingService?wsdl" doc:name="CXF Service" enableMuleSoapHeaders="false"/>
+        <logger message="test 1 + #[payload] + #[message.inboundProperties] + #[message.outboundProperties] + Payload  #[message.payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+        <ws:consumer config-ref="ListingService" operation="SearchBook" doc:name="Web Service Consumer"/>
+        <echo-component doc:name="Echo"/>
+        <logger message="Test 4 #[message]  Payload #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="productsflowFlow1">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/ProductsService2" doc:name="HTTP"/>
+        <logger message="Flow WCF 1 -&gt;  Query params: +   #[message.inboundProperties.'http.query.params'.searchParameters] + Payload = #[payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+        <set-payload value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ser:SearchBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[message.inboundProperties.'http.query.params'.searchParameters]&lt;/arg0&gt;&lt;/ser:SearchBook&gt;" doc:name="Set Payload"/>
+        <echo-component doc:name="Echo"/>
+        <logger message="WCF Payload #[message.payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+        <logger message="Flow WCF 2 -&gt;  Payload   #[message.payload]" level="INFO" doc:name="Logger"/>
+        <ws:consumer config-ref="ListingService" operation="SearchBook" doc:name="Web Service Consumer"/>
+        <echo-component doc:name="Echo"/>
+        <logger message="Flow WCF RESULT -&gt;  Payload   #[message.payload]" level="INFO" doc:name="Logger"/>
+    </flow>  
+</mule>

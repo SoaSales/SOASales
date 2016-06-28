@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ws="http://www.mulesoft.org/schema/mule/ws"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <http:request-config name="Ebay" host="http://svcs.ebay.com" port="80" doc:name="HTTP Request Configuration"/>
+
+
+  <flow name="SearchProduct">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/api/ProductsService/Search" doc:name="HTTP"/>
+        <logger message="Search Request: Query params: +   #[message.inboundProperties.'http.query.params'.searchParameters] " level="INFO" doc:name="LogRequest"/>
+        <set-variable variableName="searchParameters" value="#[message.inboundProperties.'http.query.params'.searchParameters]" doc:name="Set SearchParameters Variable"/>
+        <flow-ref name="searchProductFlow" doc:name="searchProductFlow"/>
+        
+        <logger message="Search RESULT - Payload:  #[payload]" level="INFO" doc:name="Logger"/>
+        <mulexml:object-to-xml-transformer doc:name="Object to XML"/>
+    </flow>
+    <flow name="searchProductFlow">
+        <logger level="INFO" doc:name="Logger" message="Search - Parameters: #[flowVars.searchParameters]"/>
+        <scatter-gather doc:name="Scatter-Gather" timeout="60000">
+            <custom-aggregation-strategy class="aggregators.SearchResponseAggregator"/>
+            <processor-chain>
+                <logger message="Flow WCF - LivrosOnline" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ser:SearchBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[flowVars.searchParameters]&lt;/arg0&gt;&lt;/ser:SearchBook&gt;" doc:name="Set Payload"/>
+                <ws:consumer config-ref="ListingService" operation="SearchBook" doc:name="OnlineBooks"/>
+                <logger message="Livros Online RESULT - Payload: #[message.payload]" level="INFO" doc:name="LogResult"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.BookListToProductListTransformer" doc:name="Book Converter"/>
+            </processor-chain>
+            <processor-chain>
+                <logger message="Flow REST  - VendasOnline" level="INFO" doc:name="Logger"/>
+                <first-successful doc:name="First Successful">                    
+                    <processor-chain>
+                        <logger message="Flow VendasOnline" level="INFO" doc:name="Logger"/>
+                        <http:request config-ref="ProductsService" path="/Search" method="GET" doc:name="OnlineSales">
+                            <http:request-builder>
+                                <http:query-param paramName="searchParameters" value="#[flowVars.searchParameters]"/>
+                            </http:request-builder>
+                        </http:request>
+                        <logger message="Flow VendasOnline RESULT #[payload]" level="INFO" doc:name="Logger"/>
+                    </processor-chain>
+                    <processor-chain>
+                        <logger message="Flow BasicVendasOnline" level="INFO" doc:name="Logger"/>
+                        <expression-component doc:name="Delay flow"><![CDATA[Thread.sleep(40000);]]></expression-component>
+                        <http:request config-ref="BasicProductService" path="/SimpleSearch" method="GET" doc:name="BasicOnlineSales">
+                            <http:request-builder>
+                                <http:query-param paramName="searchParameters" value="#[flowVars.searchParameters]"/>
+                                <http:query-param paramName="numberOfProducts" value="15"/>
+                            </http:request-builder>
+                        </http:request>
+                        <logger message="Flow BasicVendasOnline RESULT #[payload]" level="INFO" doc:name="Logger"/>
+                    </processor-chain>
+                </first-successful>                
+                <logger message="Vendas Online RESULT - Payload: #[message.payload]" level="INFO" doc:name="LogResult"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.ProductListToProductListTransformer" doc:name="Product Converter"/>
+            </processor-chain>
+            <processor-chain>
+                <logger message="Flow WCF - Ebay" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;ser:findItemsByKeywordsRequest xmlns:ser=&quot;http://www.ebay.com/marketplace/search/v1/services&quot;&gt;&lt;ser:keywords&gt;#[flowVars.searchParameters]&lt;/ser:keywords&gt;&lt;/ser:findItemsByKeywordsRequest&gt;" doc:name="Set Payload"/>
+                <set-property propertyName="X-EBAY-SOA-OPERATION-NAME" value="findItemsByKeywords" doc:name="SetPropertyHeader"/>
+                <set-property propertyName="X-EBAY-SOA-SECURITY-APPNAME" value="" doc:name="SetPropertyHeader"/>
+                <ws:consumer config-ref="EbayFindingService" operation="findItemsByKeywords" doc:name="Ebay"/>
+                <logger message="EBAY RESULT - Payload: #[message.payload]" level="INFO" doc:name="LogResult"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.EbayProductListToProductList" doc:name="Ebay Converter"/>
+            </processor-chain>
+        </scatter-gather>
+    </flow>
+
+</mule>

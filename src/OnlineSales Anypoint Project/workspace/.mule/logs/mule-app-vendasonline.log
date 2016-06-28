@@ -1,0 +1,240 @@
+INFO  2015-11-30 21:28:33,562 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'vendasonline'                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+WARN  2015-11-30 21:28:33,900 [main] org.mule.util.JdkVersionUtils: We are looking into adding support for this JDK version. Use it at your own risk.
+INFO  2015-11-30 21:28:33,915 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2015-11-30 21:28:34,391 [main] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@186805d: startup date [Mon Nov 30 21:28:34 GMT 2015]; root of context hierarchy
+WARN  2015-11-30 21:28:36,503 [main] org.mule.transport.http.config.HttpResponseBuilderDefinitionParser: Schema warning: Use of element <response-builder> is deprecated.  HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead..
+WARN  2015-11-30 21:28:38,345 [main] org.mule.module.ognl.expression.OgnlExpressionEvaluator: OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+INFO  2015-11-30 21:28:39,203 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx2.log
+INFO  2015-11-30 21:28:39,219 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx2.log
+INFO  2015-11-30 21:28:39,249 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2015-11-30 21:28:40,068 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: Active_MQ
+INFO  2015-11-30 21:28:42,561 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: EbaySetVariablesFindByProduct
+INFO  2015-11-30 21:28:42,563 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@3e11b9
+INFO  2015-11-30 21:28:42,595 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: EbaySetVariablesFindByProduct.stage1
+INFO  2015-11-30 21:28:45,948 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: getproductFlow
+INFO  2015-11-30 21:28:45,949 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@244722
+INFO  2015-11-30 21:28:45,954 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: getproductFlow.stage1
+INFO  2015-11-30 21:28:46,003 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.4200265
+INFO  2015-11-30 21:28:49,653 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.20105125
+INFO  2015-11-30 21:28:49,655 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.31385103
+INFO  2015-11-30 21:28:49,658 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineViewProductFlow
+INFO  2015-11-30 21:28:49,659 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@8205ed
+INFO  2015-11-30 21:28:49,666 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineViewProductFlow.stage1
+INFO  2015-11-30 21:28:49,703 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow1
+INFO  2015-11-30 21:28:49,704 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1dec536
+INFO  2015-11-30 21:28:49,735 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow1.stage1
+WARN  2015-11-30 21:28:49,919 [main] org.mule.transport.http.HttpConnector: HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead.
+INFO  2015-11-30 21:28:50,104 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: connector.http.mule.default
+INFO  2015-11-30 21:28:52,298 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.1722107
+INFO  2015-11-30 21:28:57,668 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: searchProductFlow
+INFO  2015-11-30 21:28:57,669 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@146392c
+INFO  2015-11-30 21:28:57,675 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: searchProductFlow.stage1
+INFO  2015-11-30 21:28:57,726 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.13050668
+INFO  2015-11-30 21:28:57,731 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.31062836
+INFO  2015-11-30 21:29:00,541 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.29054781
+INFO  2015-11-30 21:29:00,543 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineSearchProductsFlow
+INFO  2015-11-30 21:29:00,543 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@15581eb
+INFO  2015-11-30 21:29:00,549 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineSearchProductsFlow.stage1
+INFO  2015-11-30 21:29:00,610 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: SearchProduct
+INFO  2015-11-30 21:29:00,611 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@18f0534
+INFO  2015-11-30 21:29:00,618 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: SearchProduct.stage1
+INFO  2015-11-30 21:29:00,680 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: GetProduct
+INFO  2015-11-30 21:29:00,680 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@92c3b6
+INFO  2015-11-30 21:29:00,687 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: GetProduct.stage1
+INFO  2015-11-30 21:29:03,232 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductsSub_Flow1
+INFO  2015-11-30 21:29:03,233 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1b492ec
+INFO  2015-11-30 21:29:03,240 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductsSub_Flow1.stage1
+INFO  2015-11-30 21:29:03,286 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.9371108
+INFO  2015-11-30 21:29:05,476 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.31051012
+INFO  2015-11-30 21:29:05,477 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.4736557
+INFO  2015-11-30 21:29:05,481 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare1
+INFO  2015-11-30 21:29:05,481 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@16eb3f
+INFO  2015-11-30 21:29:05,487 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare1.stage1
+INFO  2015-11-30 21:29:05,499 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare2
+INFO  2015-11-30 21:29:05,500 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@eb6f9a
+INFO  2015-11-30 21:29:05,506 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare2.stage1
+INFO  2015-11-30 21:29:05,517 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare3
+INFO  2015-11-30 21:29:05,518 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1df22f7
+INFO  2015-11-30 21:29:05,524 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare3.stage1
+INFO  2015-11-30 21:29:05,535 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare4
+INFO  2015-11-30 21:29:05,535 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@11f6f83
+INFO  2015-11-30 21:29:05,541 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare4.stage1
+INFO  2015-11-30 21:29:05,586 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductFlow
+INFO  2015-11-30 21:29:05,587 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@a8a2
+INFO  2015-11-30 21:29:05,593 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductFlow.stage1
+INFO  2015-11-30 21:29:05,702 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.9908987
+INFO  2015-11-30 21:29:05,730 [main] org.mule.config.spring.SpringXmlConfigurationBuilder: Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-11-30 21:29:05,731 [main] org.mule.config.builders.AutoConfigurationBuilder: Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-11-30 21:29:05,732 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'vendasonline'                              +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-11-30 21:29:05,747 [main] org.mule.util.queue.QueueXaResourceManager: Starting ResourceManager
+INFO  2015-11-30 21:29:05,748 [main] org.mule.util.queue.QueueXaResourceManager: Started ResourceManager
+INFO  2015-11-30 21:29:05,797 [main] org.mule.transport.http.HttpConnector: Connected: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=36a18
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-11-30 21:29:05,798 [main] org.mule.transport.http.HttpConnector: Starting: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=36a18
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-11-30 21:29:05,799 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: connector.http.mule.default
+INFO  2015-11-30 21:29:06,396 [main] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Connected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=38e4dc
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2015-11-30 21:29:06,397 [main] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Starting: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=38e4dc
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2015-11-30 21:29:06,397 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: Active_MQ
+INFO  2015-11-30 21:29:06,411 [main] org.mule.module.s3.agents.DefaultSplashScreenAgent: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-11-30 21:29:06,422 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting model: _muleSystemModel
+INFO  2015-11-30 21:29:06,424 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow1
+INFO  2015-11-30 21:29:06,426 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow1.stage1
+INFO  2015-11-30 21:29:06,436 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.1722107
+INFO  2015-11-30 21:29:06,454 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineViewProductFlow
+INFO  2015-11-30 21:29:06,455 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineViewProductFlow.stage1
+INFO  2015-11-30 21:29:06,458 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineSearchProductsFlow
+INFO  2015-11-30 21:29:06,459 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineSearchProductsFlow.stage1
+INFO  2015-11-30 21:29:06,463 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: SearchProduct
+INFO  2015-11-30 21:29:06,463 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: SearchProduct.stage1
+INFO  2015-11-30 21:29:06,467 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: searchProductFlow
+INFO  2015-11-30 21:29:06,467 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: searchProductFlow.stage1
+INFO  2015-11-30 21:29:06,472 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.13050668
+INFO  2015-11-30 21:29:06,473 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.31062836
+INFO  2015-11-30 21:29:06,474 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.29054781
+INFO  2015-11-30 21:29:06,476 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: GetProduct
+INFO  2015-11-30 21:29:06,477 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: GetProduct.stage1
+INFO  2015-11-30 21:29:06,481 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: getproductFlow
+INFO  2015-11-30 21:29:06,482 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: getproductFlow.stage1
+INFO  2015-11-30 21:29:06,484 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.4200265
+INFO  2015-11-30 21:29:06,486 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.20105125
+INFO  2015-11-30 21:29:06,487 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.31385103
+INFO  2015-11-30 21:29:06,489 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: EbaySetVariablesFindByProduct
+INFO  2015-11-30 21:29:06,490 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: EbaySetVariablesFindByProduct.stage1
+INFO  2015-11-30 21:29:06,493 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductFlow
+INFO  2015-11-30 21:29:06,493 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductFlow.stage1
+INFO  2015-11-30 21:29:06,496 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.9908987
+INFO  2015-11-30 21:29:06,501 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare1
+INFO  2015-11-30 21:29:06,501 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare1.stage1
+INFO  2015-11-30 21:29:06,505 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare2
+INFO  2015-11-30 21:29:06,506 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare2.stage1
+INFO  2015-11-30 21:29:06,509 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare3
+INFO  2015-11-30 21:29:06,510 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare3.stage1
+INFO  2015-11-30 21:29:06,515 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare4
+INFO  2015-11-30 21:29:06,515 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare4.stage1
+INFO  2015-11-30 21:29:06,519 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductsSub_Flow1
+INFO  2015-11-30 21:29:06,520 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductsSub_Flow1.stage1
+INFO  2015-11-30 21:29:06,522 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.9371108
+INFO  2015-11-30 21:29:06,524 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.31051012
+INFO  2015-11-30 21:29:06,525 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.4736557
+INFO  2015-11-30 21:29:06,574 [main] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Listening for requests on http://0.0.0.0:8081/VendasOnline
+INFO  2015-11-30 21:29:06,581 [main] org.mule.module.management.agent.WrapperManagerAgent: This JVM hasn't been launched by the wrapper, the agent will not run.
+INFO  2015-11-30 21:29:06,654 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="connector.http.mule.default.1"
+INFO  2015-11-30 21:29:06,655 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="Active.MQ"
+INFO  2015-11-30 21:29:06,666 [main] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Application: vendasonline                                          *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   JMX Agent                                                        *
+**********************************************************************
+INFO  2015-11-30 21:29:26,718 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search Request: Query params: +   potter 
+INFO  2015-11-30 21:29:26,735 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search - Parameters: potter
+INFO  2015-11-30 21:29:26,751 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - LivrosOnline
+INFO  2015-11-30 21:29:26,755 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST  - VendasOnline
+INFO  2015-11-30 21:29:26,756 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - Ebay
+INFO  2015-11-30 21:29:26,761 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow VendasOnline
+WARN  2015-11-30 21:29:26,991 [[vendasonline].ScatterGatherWorkManager.01] org.mule.registry.TransientRegistry: TransientRegistry already contains an object named '_muleDefaultHttpRequestConfig'.  The previous object will be overwritten.
+INFO  2015-11-30 21:29:27,459 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Livros Online RESULT - Payload: org.mule.module.ws.consumer.NamespaceRestorerXMLStreamReader@47a939
+INFO  2015-11-30 21:29:27,492 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 1628]'                      *
+********************************************************************************
+INFO  2015-11-30 21:29:29,933 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow VendasOnline RESULT org.glassfish.grizzly.utils.BufferInputStream@1a96571
+INFO  2015-11-30 21:29:29,934 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Vendas Online RESULT - Payload: org.glassfish.grizzly.utils.BufferInputStream@1a96571
+INFO  2015-11-30 21:29:29,937 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":48,"Name":"Harry Potter Time Turner+SILVER Deathly Hallows    *
+* Charm Pendant necklace ","D...[100 of 105175]'                               *
+********************************************************************************
+INFO  2015-11-30 21:29:32,076 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search RESULT - Payload:  [entities.product@1671522, entities.product@ebc631, entities.product@e8595c, entities.product@1e0870b, entities.product@c554d0, entities.product@dc537, entities.product@975913, entities.product@18c4e15, entities.product@1e9f1a0, entities.product@19da097, entities.product@1fe3c36, entities.product@25233a, entities.product@4db76f, entities.product@2a3669, entities.product@ebba96, entities.product@1f671c2, entities.product@6948dc, entities.product@15ba246, entities.product@1d8f31, entities.product@d38151, entities.product@da073f, entities.product@89d930, entities.product@bfbc97, entities.product@f26018, entities.product@ef6286, entities.product@d57a72, entities.product@1152b3b, entities.product@866421, entities.product@10adc65, entities.product@d12f9c, entities.product@d9948e, entities.product@1c15398, entities.product@8555b1, entities.product@18739f2, entities.product@154bb68, entities.product@de7b49, entities.product@ac9afe, entities.product@26430, entities.product@5913e3, entities.product@1083d52, entities.product@1eb3fa7, entities.product@c1f80e, entities.product@134be, entities.product@397ac1, entities.product@7571a6, entities.product@171e9ae, entities.product@d098fa, entities.product@12214d3, entities.product@fdbf10, entities.product@c70cf8, entities.product@d84552, entities.product@1dd5a16, entities.product@836702, entities.product@ab0766, entities.product@233db4, entities.product@1fdc84c, entities.product@3f0c46, entities.product@1dac50, entities.product@15aee7a, entities.product@48f9b5, entities.product@d78d46, entities.product@1cdd3e0, entities.product@132c5dd, entities.product@5c0a9f, entities.product@330caf, entities.product@104911a, entities.product@53b0ca, entities.product@8d53ed, entities.product@a772a7, entities.product@18eb3e8, entities.product@c9e73, entities.product@68a5e4, entities.product@101c184, entities.product@1a0347f, entities.product@1a9ccfe, entities.product@4f11aa, entities.product@1f3f6c6, entities.product@1fe244b, entities.product@87ca76, entities.product@65438d, entities.product@56ce81, entities.product@9c6e7c, entities.product@26c263, entities.product@59f01, entities.product@977fc6, entities.product@18b0ca6, entities.product@1f6efee, entities.product@1038086, entities.product@45a2ef, entities.product@194717d, entities.product@18561fe, entities.product@b9c338, entities.product@1ce599a, entities.product@145c947, entities.product@14bd680, entities.product@1b16192, entities.product@70f5f7, entities.product@1740c4f, entities.product@742377, entities.product@b9769a, entities.product@1d9f3b7, entities.product@5c91f7, entities.product@15e7710, entities.product@24c387, entities.product@acdd3f, entities.product@b2f34, entities.product@e33892, entities.product@77fc72, entities.product@128e66, entities.product@10b65df, entities.product@9f184, entities.product@1b2165b, entities.product@1f7d3b5, entities.product@1527549, entities.product@662fb6, entities.product@127f9af, entities.product@6f8c5, entities.product@182471, entities.product@1f6a55b, entities.product@1a6d5cb, entities.product@9fc92a, entities.product@14d4d24, entities.product@1f9e2eb, entities.product@a06452, entities.product@162235, entities.product@12f6ebe, entities.product@1113c8a, entities.product@de564e, entities.product@146ce2a, entities.product@1540c22, entities.product@1cb9aee, entities.product@1fbd2ff, entities.product@cb72b4, entities.product@1275293, entities.product@74b6b3, entities.product@189eba8, entities.product@c46e3f, entities.product@1dc1cfe, entities.product@66ed98, entities.product@b28317, entities.product@178b128, entities.product@547855, entities.product@1e5436a, entities.product@157d9ba, entities.product@190d189, entities.product@41993e, entities.product@1ca728f, entities.product@a9e945, entities.product@1427b00, entities.product@1f093ff, entities.product@1bec984, entities.product@a8e7f7, entities.product@6c14d9, entities.product@1f009c0, entities.product@931553, entities.product@1d1c829, entities.product@1b7d156, entities.product@b67c69, entities.product@b9c5a1, entities.product@1dcdedf, entities.product@889793, entities.product@106ee9f, entities.product@102b4d3, entities.product@65a90a, entities.product@d78a1a, entities.product@8be6c9, entities.product@b363a7, entities.product@177a942, entities.product@10e772c, entities.product@8078aa, entities.product@14597c6, entities.product@1dc04d5, entities.product@1ffa795, entities.product@6ddbe8, entities.product@1058c84, entities.product@4c39d, entities.product@b50907, entities.product@312822, entities.product@1b7eb8c, entities.product@1b9ca4c, entities.product@1ae16cd, entities.product@235322, entities.product@e42161, entities.product@144775b, entities.product@430f40, entities.product@71eb69, entities.product@101216f, entities.product@1296f3b, entities.product@1e25c11, entities.product@25cee7, entities.product@db9b55, entities.product@eb64c2, entities.product@122a61a, entities.product@16a0f6f, entities.product@1773324, entities.product@41873c, entities.product@2df198, entities.product@11d8a85, entities.product@1276e91, entities.product@1c5726e, entities.product@e3f23f, entities.product@18f1904, entities.product@1faa8c2, entities.product@100fcd1, entities.product@6d9104, entities.product@177f934, entities.product@11de0e0, entities.product@1537526, entities.product@16a33f9, entities.product@186dd79, entities.product@14824c9, entities.product@1ba8283, entities.product@15194b6, entities.product@17f730, entities.product@f1eb17, entities.product@14ad090, entities.product@ed0d2b, entities.product@108d331, entities.product@522754, entities.product@1a3a9de, entities.product@1756f14, entities.product@d3b890, entities.product@1a84c59, entities.product@1e5e1ab, entities.product@1ac2e0c, entities.product@fe0451, entities.product@1bd47d3, entities.product@1110ab6, entities.product@1838c16, entities.product@1c5c1fb, entities.product@4f938f, entities.product@12462ca, entities.product@32b744, entities.product@1a570a0, entities.product@1705770, entities.product@13448e6, entities.product@894693, entities.product@7f0152, entities.product@1cd103a, entities.product@91195d, entities.product@de7d02, entities.product@3d809a, entities.product@10e07e7, entities.product@1e5a92a, entities.product@eae039, entities.product@639cae, entities.product@101913a, entities.product@113cdc9, entities.product@5103a, entities.product@857b38, entities.product@148b3d3, entities.product@5c42b6, entities.product@fa0247, entities.product@181e59b, entities.product@15b1cd3, entities.product@1d0a2bc, entities.product@1ea6dbb, entities.product@16dfa20, entities.product@21c11a, entities.product@8a5aa0, entities.product@67793f, entities.product@a72329, entities.product@620876, entities.product@e30340, entities.product@19039e2, entities.product@8de212, entities.product@ca610d, entities.product@838d57, entities.product@28fb8c, entities.product@10c0a69, entities.product@2dc8cc, entities.product@d8016b, entities.product@19f7827, entities.product@ed653f, entities.product@46a3c6, entities.product@e7347c, entities.product@4339c7, entities.product@1c06ced, entities.product@41a3c0, entities.product@1a22c20, entities.product@52ab52, entities.product@d50cb1, entities.product@17df0c8, entities.product@1f2012b, entities.product@4f253c, entities.product@5710c0, entities.product@b44f72, entities.product@164fad6, entities.product@754b83, entities.product@ba961d, entities.product@699927, entities.product@697db6, entities.product@80d2b, entities.product@2a7a09, entities.product@267dca, entities.product@1bb2775, entities.product@18003fc, entities.product@1bd077]
+INFO  2015-11-30 21:29:47,746 [[vendasonline].http.requester.null(1) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:61483}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+INFO  2015-11-30 21:29:52,896 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: GetProduct Request -  vendor: 2  Id=0 
+INFO  2015-11-30 21:29:52,913 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get SubFlow  Vendor 2 and product 0
+INFO  2015-11-30 21:29:52,927 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: LivrosOnline
+INFO  2015-11-30 21:29:53,049 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Livros Online RESULT
+INFO  2015-11-30 21:29:53,053 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: getproductFlow. Content is: '<?xml              *
+* version="1.0" encoding="UTF-8"?><ns2:ViewBookResponse                        *
+* xmlns:ns2="http://Services/"><return><au...[100 of 325]'                     *
+********************************************************************************
+INFO  2015-11-30 21:29:53,059 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get Product Result - Payload:  [entities.product@1d12641]
+WARN  2015-11-30 21:29:53,245 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageUtils: Header: http.status is not compliant with JMS specification (sec. 3.5.1, 3.8.1.1). It will cause problems in your and other applications. Please update your application code to correct this. Mule renamed it to http_status
+INFO  2015-11-30 21:29:53,261 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default outbound transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+INFO  2015-11-30 21:29:53,264 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+WARN  2015-11-30 21:29:53,266 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageDispatcher: Starting patched JmsMessageReceiver
+INFO  2015-11-30 21:29:53,269 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'Active_MQ.dispatcher.11557267'. Object is: JmsMessageDispatcher
+INFO  2015-11-30 21:29:53,274 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'Active_MQ.dispatcher.11557267'. Object is: JmsMessageDispatcher
+WARN  2015-11-30 21:29:53,278 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageUtils: Header: http.status is not compliant with JMS specification (sec. 3.5.1, 3.8.1.1). It will cause problems in your and other applications. Please update your application code to correct this. Mule renamed it to http_status
+INFO  2015-11-30 21:29:58,110 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: GetProduct Request -  vendor: 3  Id=0 
+INFO  2015-11-30 21:29:58,113 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get SubFlow  Vendor 3 and product 0
+INFO  2015-11-30 21:29:58,119 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Ebay
+INFO  2015-11-30 21:29:58,862 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Ebay RESULT
+INFO  2015-11-30 21:29:58,867 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: getproductFlow. Content is: '<?xml              *
+* version="1.0" encoding="UTF-8"?><GetSingleItemResponse                       *
+* xmlns:xsd="http://www.w3.org/2001/XMLSc...[100 of 718]'                      *
+********************************************************************************
+INFO  2015-11-30 21:29:58,873 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get Product Result - Payload:  {NullPayload}
+WARN  2015-11-30 21:29:58,878 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageUtils: Header: http.status is not compliant with JMS specification (sec. 3.5.1, 3.8.1.1). It will cause problems in your and other applications. Please update your application code to correct this. Mule renamed it to http_status
+WARN  2015-11-30 21:29:58,880 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageUtils: Header: http.status is not compliant with JMS specification (sec. 3.5.1, 3.8.1.1). It will cause problems in your and other applications. Please update your application code to correct this. Mule renamed it to http_status
+INFO  2015-11-30 21:30:13,546 [[vendasonline].http.requester.null(2) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:61488}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache

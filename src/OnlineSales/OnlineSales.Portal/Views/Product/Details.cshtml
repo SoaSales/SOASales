@@ -1,0 +1,110 @@
+﻿@model OnlineSales.Portal.Models.ProductDetailsModel
+
+@{
+    ViewBag.Title = @Resources.Resources.ProductDetails;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    table.dataTable thead th, table.dataTable thead td,
+    table.no-footer.dataTable {
+        border: 0px;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+@section scripts
+ {
+    <script type="text/javascript">
+        var table;
+
+        $(document).ready(function () {
+            table = $('#DetailsTable').DataTable({
+                paging: false,
+                ordering: false,
+                bFilter: false,
+                bInfo: false
+            });
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h2>@ViewBag.Title</h2>
+</div>
+<div>
+    <div>
+        @if (Model.Product != null)
+        {
+            <div>
+                <table id="DetailsTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <td>@Html.DisplayFor(model => model.Product.Name)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                @Resources.Resources.Description
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.Product.Description)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Resources.Resources.Price
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.Product.Price)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Resources.Resources.Category
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.Product.Category)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Resources.Resources.AditionalInfo
+                            </th>
+                            <td>
+                                @Html.DisplayFor(model => model.Product.Other_Info)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                @Resources.Resources.Quantity
+                            </th>
+                            <td>
+                                @if (Model.Product.Quantity > 0) { 
+                                @Html.DisplayFor(model => model.Product.Quantity)
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>@Resources.Resources.Seller</th>
+                            <td>
+                                @Html.DisplayFor(model => model.Product.VendorName)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div style="margin:20px;">
+                <p>@Resources.Resources.NoRecords</p>
+            </div>
+        }
+    </div>
+    <p style="padding:30px 0px;">
+        @Html.ActionLink(@Resources.Resources.ReturnToSearch, "Search")
+    </p>
+</div>

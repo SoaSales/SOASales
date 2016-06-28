@@ -1,0 +1,448 @@
+INFO  2015-08-03 15:00:32,900 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.module.http.internal.listener.HttpListenerRegistry: No listener found for request: (GET)/favicon.ico
+INFO  2015-08-03 15:00:32,904 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.module.http.internal.listener.HttpListenerRegistry: Available listeners are: [(*)/VendasOnline/CompareProductsTest/, (*)/VendasOnline/Test/, (*)/VendasOnline/api/ProductsService/Search/, (*)/VendasOnline/ProductsService/test/, (*)/VendasOnline/ProductsService2/, (*)/VendasOnline/api/ProductsService/, (*)/VendasOnline/CompareProducts/, (*)/VendasOnline/api/ProductsService/Get/]
+INFO  2015-08-03 15:01:58,305 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> Scatter -  Query params: +   linguagem + 
+org.mule.DefaultMuleMessage
+{
+  id=349c69d0-39e8-11e5-95d8-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53875
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-08-03 15:01:58,305 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST Scatter  ->  Query params: +   linguagem + + 
+org.mule.DefaultMuleMessage
+{
+  id=349c69d0-39e8-11e5-95d8-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53875
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-08-03 15:01:58,548 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 854]'                       *
+********************************************************************************
+INFO  2015-08-03 15:01:58,553 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> RESULT + <?xml version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse xmlns:ns2="http://Services/"><return><BookId>2</BookId><Title>Linguagem C</Title><Authors>LuÃ­s Damas</Authors><Description/><Price>30.5</Price><Quantity>10</Quantity><authors>LuÃ­s Damas</authors><bookId>2</bookId><description/><price>30.5</price><quantity>10</quantity><title>Linguagem C</title></return><return><BookId>6</BookId><Title>C# 4.0</Title><Authors>Ricardo Figueira</Authors><Authors>HernÃ¢ni Pedroso</Authors><Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description><Price>36.25</Price><Quantity>20</Quantity><authors>Ricardo Figueira</authors><authors>HernÃ¢ni Pedroso</authors><bookId>6</bookId><description>Livro sobre a linguagem de programaÃ§Ã£o C#</description><price>36.25</price><quantity>20</quantity><title>C# 4.0</title></return></ns2:SearchBookResponse>
+INFO  2015-08-03 15:02:03,595 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de   *
+* programação C#","Price":36...[100 of 592]'                                   *
+********************************************************************************
+INFO  2015-08-03 15:02:03,595 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST  -> RESULT + [{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de programação C#","Price":36.25,"Quantity":20,"Category":"Book","Other_Info":"Ricardo Figueira,Hernâni Pedroso  "},{"ProductId":3,"Name":"C# 3.5","Description":"Linguagem C#","Price":27.5,"Quantity":15,"Category":"Book","Other_Info":"Paulo Marques,Ricardo Figueira  "},{"ProductId":8,"Name":"Head First C#","Description":"Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.","Price":20.8,"Quantity":10,"Category":"Book","Other_Info":"Dennis M. Ritchie,Brian W. Kernighan"}]
+INFO  2015-08-03 15:02:03,669 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: RESULT 
+org.mule.DefaultMuleMessage
+{
+  id=349c69d0-39e8-11e5-95d8-005056be0d94
+  payload=java.util.ArrayList
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53875
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-08-03 15:02:03,698 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: RESULT Message: 
+org.mule.DefaultMuleMessage
+{
+  id=349c69d0-39e8-11e5-95d8-005056be0d94
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53875
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}  Payload: <list>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>2</VendorId>
+    <Name>Linguagem C</Name>
+    <Description></Description>
+    <Price>30.5</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>LuÃ­s Damas</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>6</ProductId>
+    <VendorId>2</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description>
+    <Price>36.25</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo FigueiraHernÃ¢ni Pedroso</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programação C#</Description>
+    <Price>20.0</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo Figueira,Hernâni Pedroso  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>3</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 3.5</Name>
+    <Description>Linguagem C#</Description>
+    <Price>15.0</Price>
+    <Quantity>15</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Paulo Marques,Ricardo Figueira  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>8</ProductId>
+    <VendorId>1</VendorId>
+    <Name>Head First C#</Name>
+    <Description>Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.</Description>
+    <Price>10.0</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Dennis M. Ritchie,Brian W. Kernighan</Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+</list>
+INFO  2015-08-03 15:02:18,945 [[vendasonline].http.requester.null(1) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:53910}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+INFO  2015-08-03 15:05:06,860 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor:  vendor: 2  Id=2  variable: 2
+INFO  2015-08-03 15:05:06,875 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Vendor 1
+INFO  2015-08-03 15:05:06,988 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: SOAP RESULT
+INFO  2015-08-03 15:05:06,994 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: GetProduct. Content is: '<?xml version="1.0"    *
+* encoding="UTF-8"?><ns2:ViewBookResponse                                      *
+* xmlns:ns2="http://Services/"><return><Bo...[100 of 389]'                     *
+********************************************************************************
+INFO  2015-08-03 15:05:15,065 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> Scatter -  Query params: +   linguagem + 
+org.mule.DefaultMuleMessage
+{
+  id=a9eac740-39e8-11e5-95d8-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53918
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-08-03 15:05:15,065 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow REST Scatter  ->  Query params: +   linguagem + + 
+org.mule.DefaultMuleMessage
+{
+  id=a9eac740-39e8-11e5-95d8-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53918
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-08-03 15:05:15,164 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is:                  *
+* '[{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de   *
+* programação C#","Price":36...[100 of 592]'                                   *
+********************************************************************************
+INFO  2015-08-03 15:05:15,165 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow REST  -> RESULT + [{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de programação C#","Price":36.25,"Quantity":20,"Category":"Book","Other_Info":"Ricardo Figueira,Hernâni Pedroso  "},{"ProductId":3,"Name":"C# 3.5","Description":"Linguagem C#","Price":27.5,"Quantity":15,"Category":"Book","Other_Info":"Paulo Marques,Ricardo Figueira  "},{"ProductId":8,"Name":"Head First C#","Description":"Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.","Price":20.8,"Quantity":10,"Category":"Book","Other_Info":"Dennis M. Ritchie,Brian W. Kernighan"}]
+INFO  2015-08-03 15:05:15,182 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 854]'                       *
+********************************************************************************
+INFO  2015-08-03 15:05:15,183 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow WCF -> RESULT + <?xml version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse xmlns:ns2="http://Services/"><return><BookId>2</BookId><Title>Linguagem C</Title><Authors>LuÃ­s Damas</Authors><Description/><Price>30.5</Price><Quantity>10</Quantity><authors>LuÃ­s Damas</authors><bookId>2</bookId><description/><price>30.5</price><quantity>10</quantity><title>Linguagem C</title></return><return><BookId>6</BookId><Title>C# 4.0</Title><Authors>Ricardo Figueira</Authors><Authors>HernÃ¢ni Pedroso</Authors><Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description><Price>36.25</Price><Quantity>20</Quantity><authors>Ricardo Figueira</authors><authors>HernÃ¢ni Pedroso</authors><bookId>6</bookId><description>Livro sobre a linguagem de programaÃ§Ã£o C#</description><price>36.25</price><quantity>20</quantity><title>C# 4.0</title></return></ns2:SearchBookResponse>
+INFO  2015-08-03 15:05:15,189 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: RESULT 
+org.mule.DefaultMuleMessage
+{
+  id=a9eac740-39e8-11e5-95d8-005056be0d94
+  payload=java.util.ArrayList
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53918
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-08-03 15:05:15,195 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: RESULT Message: 
+org.mule.DefaultMuleMessage
+{
+  id=a9eac740-39e8-11e5-95d8-005056be0d94
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[linguagem]]}
+    http.query.string=searchParameters=linguagem
+    http.remote.address=/10.84.128.65:53918
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=linguagem
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}  Payload: <list>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>2</VendorId>
+    <Name>Linguagem C</Name>
+    <Description></Description>
+    <Price>30.5</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>LuÃ­s Damas</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>6</ProductId>
+    <VendorId>2</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programaÃ§Ã£o C#</Description>
+    <Price>36.25</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo FigueiraHernÃ¢ni Pedroso</Other__Info>
+    <VendorName>Livros Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>2</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 4.0</Name>
+    <Description>Livro sobre a linguagem de programação C#</Description>
+    <Price>20.0</Price>
+    <Quantity>20</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Ricardo Figueira,Hernâni Pedroso  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>3</ProductId>
+    <VendorId>1</VendorId>
+    <Name>C# 3.5</Name>
+    <Description>Linguagem C#</Description>
+    <Price>15.0</Price>
+    <Quantity>15</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Paulo Marques,Ricardo Figueira  </Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+  <entities.product>
+    <ProductId>8</ProductId>
+    <VendorId>1</VendorId>
+    <Name>Head First C#</Name>
+    <Description>Livro de programação de C#. Head First C# introduz esta linguagem de uma forma divertida e visual.</Description>
+    <Price>10.0</Price>
+    <Quantity>10</Quantity>
+    <Category>Book</Category>
+    <Other__Info>Dennis M. Ritchie,Brian W. Kernighan</Other__Info>
+    <VendorName>Vendas Online</VendorName>
+  </entities.product>
+</list>
+INFO  2015-08-03 15:05:21,222 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: START
+INFO  2015-08-03 15:05:21,226 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: comparetestFlow. Content is: '<?xml             *
+* version="1.0" encoding="UTF-8"?><CompareProducts                             *
+* xmlns="http://tempuri.org/"><products><Produc...[100 of 710]'                *
+********************************************************************************
+INFO  2015-08-03 15:05:21,242 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Before Scatter [entities.ProductIdentifier@19e393e, entities.ProductIdentifier@c031f8, entities.ProductIdentifier@10cca9]  count 3
+INFO  2015-08-03 15:05:21,246 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1
+INFO  2015-08-03 15:05:21,247 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2
+INFO  2015-08-03 15:05:21,250 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4
+INFO  2015-08-03 15:05:21,250 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3
+INFO  2015-08-03 15:05:21,264 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 4 size:   3 payload  3
+INFO  2015-08-03 15:05:21,264 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: FlowCompare2 size:   3 payload  3
+INFO  2015-08-03 15:05:21,265 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 3 size:   3 payload  3
+INFO  2015-08-03 15:05:21,280 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Compare 2 Flow vendor
+INFO  2015-08-03 15:05:21,281 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Compare 4 Default - No product request
+INFO  2015-08-03 15:05:21,283 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Compare 3 Flow vendor
+INFO  2015-08-03 15:05:21,287 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 1  size:   3 payload  3 ///  true    / 3
+INFO  2015-08-03 15:05:21,288 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Compare 1 Flow vendor
+INFO  2015-08-03 15:05:21,297 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4 Response
+INFO  2015-08-03 15:05:21,300 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Before coice 2    Variaveis vendor 1   product 2
+INFO  2015-08-03 15:05:21,300 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Before coice 2   Variaveis vendor 2   product null
+INFO  2015-08-03 15:05:21,300 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Before coice 3    Variaveis vendor 1   product 3
+INFO  2015-08-03 15:05:21,302 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-08-03 15:05:21,302 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-08-03 15:05:21,302 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-08-03 15:05:21,303 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: DEFAULT REST id: 2
+INFO  2015-08-03 15:05:21,303 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: DEFAULT REST id: 3
+INFO  2015-08-03 15:05:21,303 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Vendor:  2
+INFO  2015-08-03 15:05:21,305 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: SOAP REQUEST <ser:ViewBook xmlns:ser="http://Services/"><arg0>2</arg0></ser:ViewBook>
+INFO  2015-08-03 15:05:21,383 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: REST RESULT
+INFO  2015-08-03 15:05:21,385 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is:           *
+* '{"ProductId":2,"Name":"C# 4.0","Description":"Livro sobre a linguagem de    *
+* programação C#","Price":36....[100 of 185]'                                  *
+********************************************************************************
+INFO  2015-08-03 15:05:21,389 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: REST RESULT
+INFO  2015-08-03 15:05:21,389 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Choice RESULT
+INFO  2015-08-03 15:05:21,391 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2 Response
+INFO  2015-08-03 15:05:21,391 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is:           *
+* '{"ProductId":3,"Name":"C# 3.5","Description":"Linguagem                     *
+* C#","Price":27.5,"Quantity":15,"Category":"B...[100 of 153]'                 *
+********************************************************************************
+INFO  2015-08-03 15:05:21,393 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Choice RESULT
+INFO  2015-08-03 15:05:21,395 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3 Response
+INFO  2015-08-03 15:05:21,408 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: SOAP RESULT
+INFO  2015-08-03 15:05:21,412 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is: '<?xml    *
+* version="1.0" encoding="UTF-8"?><ns2:ViewBookResponse                        *
+* xmlns:ns2="http://Services/"><return><Bo...[100 of 389]'                     *
+********************************************************************************
+INFO  2015-08-03 15:05:21,418 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice RESULT
+INFO  2015-08-03 15:05:21,420 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1 Response
+INFO  2015-08-03 15:05:21,422 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: After Scatter
+INFO  2015-08-03 15:05:21,424 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Return Response Payload: <?xml version="1.0" encoding="UTF-8"?><CompareProductsResponse xmlns="http://tempuri.org/"><CompareProductsResult xmlns:a="http://schemas.datacontract.org/2004/07/VendasOnline.WCFServices.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><a:ProductsDataContract><a:Category>Book</a:Category><a:Description></a:Description><a:Name>Linguagem C</a:Name><a:Other_Info>LuÃ­s Damas</a:Other_Info><a:Price>30.5</a:Price><a:ProductId>2</a:ProductId><a:Quantity>10</a:Quantity><a:VendorId>2</a:VendorId><a:VendorName>Livros Online</a:VendorName></a:ProductsDataContract><a:ProductsDataContract><a:Category>Book</a:Category><a:Description>Livro sobre a linguagem de programação C#</a:Description><a:Name>C# 4.0</a:Name><a:Other_Info>Ricardo Figueira,Hernâni Pedroso  </a:Other_Info><a:Price>20.0</a:Price><a:ProductId>2</a:ProductId><a:Quantity>20</a:Quantity><a:VendorId>1</a:VendorId><a:VendorName>Vendas Online</a:VendorName></a:ProductsDataContract><a:ProductsDataContract><a:Category>Book</a:Category><a:Description>Linguagem C#</a:Description><a:Name>C# 3.5</a:Name><a:Other_Info>Paulo Marques,Ricardo Figueira  </a:Other_Info><a:Price>15.0</a:Price><a:ProductId>3</a:ProductId><a:Quantity>15</a:Quantity><a:VendorId>1</a:VendorId><a:VendorName>Vendas Online</a:VendorName></a:ProductsDataContract> </CompareProductsResult></CompareProductsResponse>

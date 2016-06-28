@@ -1,0 +1,64 @@
+package aggregators;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mule.DefaultMuleEvent;
+import org.mule.api.MuleEvent;
+import org.mule.api.MuleException;
+import org.mule.api.MuleMessage;
+import org.mule.api.routing.AggregationContext;
+import org.mule.routing.AggregationStrategy;
+
+import converters.BookToProduct;
+import converters.ProductConverter;
+import entities.product;
+
+public class SearchResponseAggregator implements AggregationStrategy {
+	
+	@Override
+	public MuleEvent aggregate(AggregationContext context) throws MuleException {
+		
+		 // mule event that will be rewritten
+		 MuleEvent originalEvent = context.getOriginalEvent();
+		 // message which payload will be rewritten
+		 MuleMessage message = originalEvent.getMessage();
+		
+		 List<product> productsList = new ArrayList<product>();
+		// MuleEvent result = null;
+	       
+		
+		 //int countTotal = context.collectEventsWithExceptions().size();
+		 //int countSucess = context.collectEventsWithoutExceptions().size();
+		 //int index =0;
+	     for (MuleEvent event : context.collectEventsWithoutExceptions()) {	
+	    	 List<product> resultProductsList = ( List<product>)event.getMessage().getPayload();
+	    	 productsList.addAll(resultProductsList);
+	    	 //productsList.addAll(this.getProductList(event, index));    	 
+	    	 //index++;
+	     }
+	     
+	 	//message.setPayload(productsList.iterator());
+	     message.setPayload(productsList);	     
+	   
+	     return new DefaultMuleEvent(message, originalEvent); 
+	     //return result;
+		
+	}
+	
+	private List<product> getProductList(MuleEvent event, int index){
+		List<product> productsList = new ArrayList<>();	
+					
+		String payload = (String)event.getMessage().getPayload();		
+
+		if(payload != "" && payload.length() > 2){
+			if(index == 0){
+				productsList.addAll(new BookToProduct().ConvertStringBookResponse(payload));
+			} else{
+				productsList.addAll(new ProductConverter().ConvertStringProductResponse(payload));
+			}
+		}
+		return productsList;
+	}
+
+}

@@ -1,0 +1,128 @@
+INFO  2015-07-23 00:33:13,508 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'vendasonline'                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-07-23 00:33:13,940 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2015-07-23 00:33:14,554 [main] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@18207f: startup date [Thu Jul 23 00:33:14 BST 2015]; root of context hierarchy
+WARN  2015-07-23 00:33:16,687 [main] org.mule.transport.http.config.HttpResponseBuilderDefinitionParser: Schema warning: Use of element <response-builder> is deprecated.  HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead..
+WARN  2015-07-23 00:33:18,863 [main] org.mule.module.ognl.expression.OgnlExpressionEvaluator: OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+INFO  2015-07-23 00:33:20,634 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx2.log
+INFO  2015-07-23 00:33:20,679 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx2.log
+INFO  2015-07-23 00:33:20,761 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2015-07-23 00:33:21,986 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow1
+INFO  2015-07-23 00:33:21,987 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@c7cbb7
+INFO  2015-07-23 00:33:22,062 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow1.stage1
+INFO  2015-07-23 00:33:22,083 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.8570422
+INFO  2015-07-23 00:33:24,657 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: searchProductFlow
+INFO  2015-07-23 00:33:24,657 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@8bf208
+INFO  2015-07-23 00:33:24,664 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: searchProductFlow.stage1
+INFO  2015-07-23 00:33:24,750 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.11593924
+INFO  2015-07-23 00:33:24,750 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.23388701
+INFO  2015-07-23 00:33:25,246 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: SearchProduct
+INFO  2015-07-23 00:33:25,247 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1b4193e
+INFO  2015-07-23 00:33:25,255 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: SearchProduct.stage1
+INFO  2015-07-23 00:33:25,259 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.20600227
+INFO  2015-07-23 00:33:25,451 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow
+INFO  2015-07-23 00:33:25,452 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1a1dbdd
+INFO  2015-07-23 00:33:25,459 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow.stage1
+INFO  2015-07-23 00:33:25,471 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.27011301
+WARN  2015-07-23 00:33:25,794 [main] org.mule.transport.http.HttpConnector: HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead.
+INFO  2015-07-23 00:33:26,004 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: connector.http.mule.default
+INFO  2015-07-23 00:33:26,512 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.20073882
+INFO  2015-07-23 00:33:26,670 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow1
+INFO  2015-07-23 00:33:26,670 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1e378f2
+INFO  2015-07-23 00:33:26,678 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow1.stage1
+INFO  2015-07-23 00:33:26,679 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.6441268
+INFO  2015-07-23 00:33:26,679 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.1675323
+INFO  2015-07-23 00:33:26,680 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.12591009
+INFO  2015-07-23 00:33:26,752 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.11790092
+INFO  2015-07-23 00:33:26,920 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: GetProduct
+INFO  2015-07-23 00:33:26,921 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@586007
+INFO  2015-07-23 00:33:26,928 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: GetProduct.stage1
+INFO  2015-07-23 00:33:26,985 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.29580140
+INFO  2015-07-23 00:33:26,986 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.17517310
+INFO  2015-07-23 00:33:29,152 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: comparetestFlow
+INFO  2015-07-23 00:33:29,153 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@ed3ff5
+INFO  2015-07-23 00:33:29,161 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: comparetestFlow.stage1
+INFO  2015-07-23 00:33:29,728 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductsFlow
+INFO  2015-07-23 00:33:29,728 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@100a204
+INFO  2015-07-23 00:33:29,734 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductsFlow.stage1
+INFO  2015-07-23 00:33:29,741 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.873146
+INFO  2015-07-23 00:33:29,810 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.21618905
+INFO  2015-07-23 00:33:29,811 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.24389518
+INFO  2015-07-23 00:33:29,840 [main] org.mule.config.spring.SpringXmlConfigurationBuilder: Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-07-23 00:33:29,841 [main] org.mule.config.builders.AutoConfigurationBuilder: Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-07-23 00:33:29,842 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'vendasonline'                              +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-07-23 00:33:29,851 [main] org.mule.util.queue.QueueXaResourceManager: Starting ResourceManager
+INFO  2015-07-23 00:33:29,851 [main] org.mule.util.queue.QueueXaResourceManager: Started ResourceManager
+INFO  2015-07-23 00:33:29,890 [main] org.mule.transport.http.HttpConnector: Connected: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=1102caa
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-07-23 00:33:29,891 [main] org.mule.transport.http.HttpConnector: Starting: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=1102caa
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-07-23 00:33:29,893 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: connector.http.mule.default
+INFO  2015-07-23 00:33:29,901 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting model: _muleSystemModel
+INFO  2015-07-23 00:33:29,903 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow1
+INFO  2015-07-23 00:33:29,905 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow1.stage1
+INFO  2015-07-23 00:33:29,912 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.8570422
+INFO  2015-07-23 00:33:29,929 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: searchProductFlow
+INFO  2015-07-23 00:33:29,929 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: searchProductFlow.stage1
+INFO  2015-07-23 00:33:29,934 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.11593924
+INFO  2015-07-23 00:33:29,935 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.23388701
+INFO  2015-07-23 00:33:29,937 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: SearchProduct
+INFO  2015-07-23 00:33:29,937 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: SearchProduct.stage1
+INFO  2015-07-23 00:33:29,940 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.20600227
+INFO  2015-07-23 00:33:29,944 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow
+INFO  2015-07-23 00:33:29,945 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow.stage1
+INFO  2015-07-23 00:33:29,947 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.27011301
+INFO  2015-07-23 00:33:29,952 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.20073882
+INFO  2015-07-23 00:33:29,953 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow1
+INFO  2015-07-23 00:33:29,954 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow1.stage1
+INFO  2015-07-23 00:33:29,958 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.6441268
+INFO  2015-07-23 00:33:29,961 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.1675323
+INFO  2015-07-23 00:33:29,963 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.12591009
+INFO  2015-07-23 00:33:29,965 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.11790092
+INFO  2015-07-23 00:33:29,967 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: GetProduct
+INFO  2015-07-23 00:33:29,968 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: GetProduct.stage1
+INFO  2015-07-23 00:33:29,972 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.29580140
+INFO  2015-07-23 00:33:29,973 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.17517310
+INFO  2015-07-23 00:33:29,976 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: comparetestFlow
+INFO  2015-07-23 00:33:29,977 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: comparetestFlow.stage1
+INFO  2015-07-23 00:33:29,979 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductsFlow
+INFO  2015-07-23 00:33:29,980 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductsFlow.stage1
+INFO  2015-07-23 00:33:29,982 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.873146
+INFO  2015-07-23 00:33:29,984 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.21618905
+INFO  2015-07-23 00:33:29,986 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.24389518
+INFO  2015-07-23 00:33:30,055 [main] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Listening for requests on http://0.0.0.0:8081/VendasOnline
+INFO  2015-07-23 00:33:30,062 [main] org.mule.module.management.agent.WrapperManagerAgent: This JVM hasn't been launched by the wrapper, the agent will not run.
+INFO  2015-07-23 00:33:30,118 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="connector.http.mule.default.1"
+INFO  2015-07-23 00:33:30,129 [main] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Application: vendasonline                                          *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+**********************************************************************

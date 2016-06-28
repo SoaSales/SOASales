@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="LivrosOnline:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/LivrosOnline_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="OnlineBooks/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="OnlineBooks" />
+          <element id="jpa-descriptors" facet="OnlineBooks/jpa/JPA" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" />
+          <element id="library" level="project" name="opencsv-3.4" />
+          <element id="library" level="project" name="sqlite-jdbc-3.6.20.1" />
+          <element id="library" level="project" name="javax.persistence" />
+          <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+          <element id="library" level="project" name="hibernate-entitymanager-4.2.3" />
+          <element id="library" level="project" name="apache-log4j-2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

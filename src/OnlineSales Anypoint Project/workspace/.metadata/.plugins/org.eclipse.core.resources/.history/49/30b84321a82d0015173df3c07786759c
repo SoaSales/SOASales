@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ws="http://www.mulesoft.org/schema/mule/ws"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd">
+    <flow name="compareproductsFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
+        <cxf:proxy-service namespace="http://tempuri.org/" service="ProductsService" payload="body" wsdlLocation="http://localhost/ProductService/Services/ProductsService.svc?wsdl" doc:name="CXF"/>
+        <logger message="START  #[payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+        <custom-transformer class="Transformers.ProductIdentifierTransformer" doc:name="Create Products Identifiers List"/>
+        <collection-splitter doc:name="Collection Splitter"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <set-variable variableName="vendor" value="#[payload.getVendorId()]" doc:name="Variable"/>
+        <flow-ref name="compareproductsSub_Flow" doc:name="compareproductsSub_Flow"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <collection-aggregator failOnTimeout="true" doc:name="Collection Aggregator"/>
+        <logger message="Agregattor Result  #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <sub-flow name="compareproductsSub_Flow">
+    
+     <choice doc:name="Choice">
+            <when expression="#[flowVars.vendor == '2']">
+                <logger message="Choice Vendor:  #[payload.getVendorId()]" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;ser:ViewBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[payload.getProductId()]&lt;/arg0&gt;&lt;/ser:ViewBook&gt;" doc:name="Set Payload"/>
+                <logger message="SOAP REQUEST #[payload]" level="INFO" doc:name="Logger"/>
+                <ws:consumer config-ref="ListingService" operation="ViewBook" doc:name="Web Service Consumer"/>
+                <logger message="SOAP RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.BookToProductTransformers" doc:name="Java"/>
+            </when>
+            <otherwise>
+                <logger message="DEFAULT REST id: #[payload.getProductId()]" level="INFO" doc:name="Logger"/>
+                <http:request config-ref="ProductsService" path="/#[payload.getProductId()]" method="GET" doc:name="HTTP">
+                    <http:request-builder>
+                    </http:request-builder>
+                </http:request>
+                <logger message="REST RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.ProductToProductTransformer" doc:name="Java"/>
+            </otherwise>
+        </choice>
+        <mulexml:object-to-xml-transformer doc:name="Object to XML"/>
+        
+    </sub-flow>
+</mule>

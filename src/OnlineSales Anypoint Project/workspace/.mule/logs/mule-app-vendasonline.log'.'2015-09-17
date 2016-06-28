@@ -1,0 +1,295 @@
+INFO  2015-09-17 01:05:26,657 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search Request: Query params: +   book 
+INFO  2015-09-17 01:05:26,672 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST  - VendasOnline
+INFO  2015-09-17 01:05:26,672 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - LivrosOnline
+INFO  2015-09-17 01:05:26,672 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - Ebay
+INFO  2015-09-17 01:05:26,684 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: 
+org.mule.DefaultMuleMessage
+{
+  id=cc971ff0-5ccf-11e5-a82d-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[book]]}
+    http.query.string=searchParameters=book
+    http.remote.address=/10.84.128.65:51908
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=book
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+WARN  2015-09-17 01:05:26,875 [[vendasonline].ScatterGatherWorkManager.03] org.mule.registry.TransientRegistry: TransientRegistry already contains an object named '_muleDefaultHttpRequestConfig'.  The previous object will be overwritten.
+INFO  2015-09-17 01:05:27,290 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Livros Online RESULT - Payload: org.mule.module.ws.consumer.NamespaceRestorerXMLStreamReader@112eb3c
+INFO  2015-09-17 01:05:27,322 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 1004]'                      *
+********************************************************************************
+INFO  2015-09-17 01:05:29,314 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: 
+org.mule.DefaultMuleMessage
+{
+  id=cc971ff0-5ccf-11e5-a82d-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[book]]}
+    http.query.string=searchParameters=book
+    http.remote.address=/10.84.128.65:51908
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=book
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-09-17 01:05:31,565 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: EBAY RESULT - Payload: org.mule.module.ws.consumer.NamespaceRestorerXMLStreamReader@b9ff0d
+INFO  2015-09-17 01:05:31,639 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><findItemsByKeywordsResponse                 *
+* xmlns="http://www.ebay.com/market...[100 of 65471]'                          *
+********************************************************************************
+INFO  2015-09-17 01:05:41,595 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search RESULT - Payload:  [entities.product@b3dfb9, entities.product@125130d, entities.product@105bc17, entities.product@17fc70d, entities.product@1e5338f, entities.product@9bfb7d, entities.product@9be26c, entities.product@2e3b6f, entities.product@14028d1, entities.product@137e545, entities.product@ad41bf, entities.product@b76e3a, entities.product@a5c722, entities.product@1b48a89, entities.product@1f35247, entities.product@19ec5c1, entities.product@c9207b, entities.product@738650, entities.product@76ee6b, entities.product@1ec373, entities.product@1b1e452, entities.product@4c563, entities.product@13af0d9, entities.product@9a5a11, entities.product@18f22cf, entities.product@368055, entities.product@2350a9, entities.product@84a0f6, entities.product@1638d4f, entities.product@d259f1, entities.product@f12fa, entities.product@1a70112]
+INFO  2015-09-17 01:05:47,598 [[vendasonline].http.requester.null(1) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:51973}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+INFO  2015-09-17 01:06:08,971 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: GetProduct Request -  vendor: 3  Id=400919343375 
+INFO  2015-09-17 01:06:09,014 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get SubFlow  Vendor 3 and product 400919343375
+INFO  2015-09-17 01:06:09,033 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Ebay
+INFO  2015-09-17 01:06:10,071 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Ebay RESULT
+INFO  2015-09-17 01:06:10,075 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: getproductFlow. Content is: '<?xml              *
+* version="1.0" encoding="UTF-8"?><GetSingleItemResponse                       *
+* xmlns:xsd="http://www.w3.org/2001/XMLSc...[100 of 1948]'                     *
+********************************************************************************
+INFO  2015-09-17 01:06:10,082 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Get Product Result - Payload:  entities.product@3c4c7f
+WARN  2015-09-17 01:06:10,253 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageUtils: Header: http.status is not compliant with JMS specification (sec. 3.5.1, 3.8.1.1). It will cause problems in your and other applications. Please update your application code to correct this. Mule renamed it to http_status
+INFO  2015-09-17 01:06:10,268 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default outbound transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+INFO  2015-09-17 01:06:10,270 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+WARN  2015-09-17 01:06:10,272 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageDispatcher: Starting patched JmsMessageReceiver
+INFO  2015-09-17 01:06:10,275 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'Active_MQ.dispatcher.1127815'. Object is: JmsMessageDispatcher
+INFO  2015-09-17 01:06:10,280 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'Active_MQ.dispatcher.1127815'. Object is: JmsMessageDispatcher
+WARN  2015-09-17 01:06:10,284 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageUtils: Header: http.status is not compliant with JMS specification (sec. 3.5.1, 3.8.1.1). It will cause problems in your and other applications. Please update your application code to correct this. Mule renamed it to http_status
+INFO  2015-09-17 01:06:26,110 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search Request: Query params: +   book 
+INFO  2015-09-17 01:06:26,117 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - LivrosOnline
+INFO  2015-09-17 01:06:26,117 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow REST  - VendasOnline
+INFO  2015-09-17 01:06:26,117 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - Ebay
+INFO  2015-09-17 01:06:26,118 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: 
+org.mule.DefaultMuleMessage
+{
+  id=f01d0ed0-5ccf-11e5-a82d-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[book]]}
+    http.query.string=searchParameters=book
+    http.remote.address=/10.84.128.65:51978
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=book
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-09-17 01:06:26,178 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Livros Online RESULT - Payload: org.mule.module.ws.consumer.NamespaceRestorerXMLStreamReader@1b61fa5
+INFO  2015-09-17 01:06:26,181 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><ns2:SearchBookResponse                      *
+* xmlns:ns2="http://Services/"><return><...[100 of 1004]'                      *
+********************************************************************************
+INFO  2015-09-17 01:06:28,373 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: 
+org.mule.DefaultMuleMessage
+{
+  id=f01d0ed0-5ccf-11e5-a82d-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[book]]}
+    http.query.string=searchParameters=book
+    http.remote.address=/10.84.128.65:51978
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=book
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+INFO  2015-09-17 01:06:30,109 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: EBAY RESULT - Payload: org.mule.module.ws.consumer.NamespaceRestorerXMLStreamReader@107cea0
+INFO  2015-09-17 01:06:30,123 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: searchProductFlow. Content is: '<?xml           *
+* version="1.0" encoding="UTF-8"?><findItemsByKeywordsResponse                 *
+* xmlns="http://www.ebay.com/market...[100 of 60995]'                          *
+********************************************************************************
+INFO  2015-09-17 01:06:40,632 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search RESULT - Payload:  [entities.product@c112af, entities.product@1b1a3a6, entities.product@16f05e8, entities.product@1ecc835, entities.product@4c2306, entities.product@8f8e41, entities.product@c452d1, entities.product@11943d7, entities.product@1b51349, entities.product@1055f1f, entities.product@1a811ac, entities.product@12074ad, entities.product@1cc44e7, entities.product@1bfc6b9, entities.product@18fae05, entities.product@1e9cc16, entities.product@55e050, entities.product@1f9bcfa, entities.product@e5ed2e, entities.product@136a818, entities.product@155d4cb, entities.product@57df6, entities.product@90be35, entities.product@b7c34f, entities.product@778f7f, entities.product@16dec86, entities.product@1c37e41, entities.product@19617c0, entities.product@f16c33, entities.product@1f68ee8, entities.product@204120, entities.product@1939f04]
+INFO  2015-09-17 01:06:46,675 [[vendasonline].http.requester.null(2) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:51979}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+INFO  2015-09-17 01:06:50,418 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Compare Request - Payload: com.ctc.wstx.sr.ValidatingStreamReader@cf27c6
+INFO  2015-09-17 01:06:50,422 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: comparetestFlow. Content is: '<?xml             *
+* version="1.0" encoding="UTF-8"?><CompareProducts                             *
+* xmlns="http://tempuri.org/"><products><Produc...[100 of 721]'                *
+********************************************************************************
+INFO  2015-09-17 01:06:50,435 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1
+INFO  2015-09-17 01:06:50,436 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2
+INFO  2015-09-17 01:06:50,438 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3
+INFO  2015-09-17 01:06:50,439 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4
+INFO  2015-09-17 01:06:50,452 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 3 size:   3 payload  3
+INFO  2015-09-17 01:06:50,452 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 4 size:   3 payload  3
+INFO  2015-09-17 01:06:50,452 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: FlowCompare2 size:   3 payload  3
+INFO  2015-09-17 01:06:50,469 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Compare 3 Flow vendor
+INFO  2015-09-17 01:06:50,470 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Compare 2 Flow vendor
+INFO  2015-09-17 01:06:50,474 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Before coice 3    Variaveis vendor 2   product 7
+INFO  2015-09-17 01:06:50,474 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Compare 4 Default - No product request
+INFO  2015-09-17 01:06:50,475 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-09-17 01:06:50,475 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-09-17 01:06:50,476 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Ebay
+INFO  2015-09-17 01:06:50,477 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Choice Vendor:  2
+INFO  2015-09-17 01:06:50,478 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: FlowCompare 1  size:   3 payload  3 ///  true    / 3
+INFO  2015-09-17 01:06:50,480 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Compare 1 Flow vendor
+INFO  2015-09-17 01:06:50,484 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Flow
+INFO  2015-09-17 01:06:50,486 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Choice Vendor:  2
+INFO  2015-09-17 01:06:50,489 [[vendasonline].ScatterGatherWorkManager.04] org.mule.api.processor.LoggerMessageProcessor: Flow 4 Response
+INFO  2015-09-17 01:06:50,529 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: LivrosOnline RESULT
+INFO  2015-09-17 01:06:50,533 [[vendasonline].ScatterGatherWorkManager.03] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is: '<?xml    *
+* version="1.0" encoding="UTF-8"?><ns2:ViewBookResponse                        *
+* xmlns:ns2="http://Services/"><return><Bo...[100 of 559]'                     *
+********************************************************************************
+INFO  2015-09-17 01:06:50,535 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: LivrosOnline RESULT
+INFO  2015-09-17 01:06:50,538 [[vendasonline].ScatterGatherWorkManager.01] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is: '<?xml    *
+* version="1.0" encoding="UTF-8"?><ns2:ViewBookResponse                        *
+* xmlns:ns2="http://Services/"><return><Bo...[100 of 553]'                     *
+********************************************************************************
+INFO  2015-09-17 01:06:50,540 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow 3 Response
+INFO  2015-09-17 01:06:50,544 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow 1 Response
+INFO  2015-09-17 01:06:51,041 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: EBAY RESULT
+INFO  2015-09-17 01:06:51,045 [[vendasonline].ScatterGatherWorkManager.02] org.mule.component.simple.LogComponent: 
+********************************************************************************
+* Message received in service: compareproductsSub_Flow1. Content is: '<?xml    *
+* version="1.0" encoding="UTF-8"?><GetSingleItemResponse                       *
+* xmlns:xsd="http://www.w3.org/2001/XMLSc...[100 of 1848]'                     *
+********************************************************************************
+INFO  2015-09-17 01:06:51,052 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow 2 Response
+INFO  2015-09-17 01:06:51,055 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Compare Result: [entities.product@3d0dd5, entities.product@574000, entities.product@2ad096]
+INFO  2015-09-17 01:06:51,059 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default outbound transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+INFO  2015-09-17 01:06:51,060 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+WARN  2015-09-17 01:06:51,061 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.transport.jms.JmsMessageDispatcher: Starting patched JmsMessageReceiver
+INFO  2015-09-17 01:06:51,062 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'Active_MQ.dispatcher.26071188'. Object is: JmsMessageDispatcher
+INFO  2015-09-17 01:06:51,063 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'Active_MQ.dispatcher.26071188'. Object is: JmsMessageDispatcher
+INFO  2015-09-17 01:07:11,028 [[vendasonline].http.requester.null(3) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:51981}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+INFO  2015-09-17 01:07:11,032 [[vendasonline].http.requester.null(4) SelectorRunner] com.ning.http.client.providers.grizzly.GrizzlyConnectionsPool: Remote closed connection (TCPNIOConnection{localSocketAddress={/127.0.0.1:51983}, peerSocketAddress={localhost/127.0.0.1:9090}}).  Removing from cache
+ERROR 2015-09-17 23:39:43,978 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.exception.DefaultSystemExceptionStrategy: 
+********************************************************************************
+Message               : java.io.EOFException (javax.jms.JMSException)
+Type                  : org.mule.transport.ConnectException
+Code                  : MULE_ERROR--2
+JavaDoc               : http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/ConnectException.html
+JMS Code              : null
+********************************************************************************
+Exception stack is:
+1. null (java.io.EOFException)
+  java.io.DataInputStream:-1 (null)
+2. java.io.EOFException(JMS Code: null) (javax.jms.JMSException)
+  org.apache.activemq.util.JMSExceptionSupport:54 (http://java.sun.com/j2ee/sdk_1.3/techdocs/api/javax/jms/JMSException.html)
+3. java.io.EOFException (javax.jms.JMSException) (org.mule.transport.ConnectException)
+  org.mule.transport.jms.JmsConnector:529 (http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/ConnectException.html)
+********************************************************************************
+Root Exception stack trace:
+java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:267)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:213)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:196)
+	at java.lang.Thread.run(Unknown Source)
+
+********************************************************************************
+
+INFO  2015-09-17 23:39:43,979 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.exception.DefaultSystemExceptionStrategy: Exception caught is a ConnectException, attempting to reconnect...
+INFO  2015-09-17 23:39:43,980 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.lifecycle.AbstractLifecycleManager: Stopping connector: Active_MQ
+INFO  2015-09-17 23:39:43,985 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.lifecycle.AbstractLifecycleManager: Stopping: 'Active_MQ.dispatcher.1127815'. Object is: JmsMessageDispatcher
+INFO  2015-09-17 23:39:43,986 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.lifecycle.AbstractLifecycleManager: Disposing: 'Active_MQ.dispatcher.1127815'. Object is: JmsMessageDispatcher
+INFO  2015-09-17 23:39:43,987 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.lifecycle.AbstractLifecycleManager: Stopping: 'Active_MQ.dispatcher.26071188'. Object is: JmsMessageDispatcher
+INFO  2015-09-17 23:39:43,987 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.lifecycle.AbstractLifecycleManager: Disposing: 'Active_MQ.dispatcher.26071188'. Object is: JmsMessageDispatcher
+WARN  2015-09-17 23:39:44,012 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Exception closing JMS connection: java.io.EOFException
+INFO  2015-09-17 23:39:44,013 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@51871] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Disconnected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=8db21a
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+ERROR 2015-09-17 23:39:45,037 [[vendasonline].Mule.02] org.mule.retry.notifiers.ConnectNotifier: Failed to connect/reconnect: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=8db21a
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=false
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+. Root Exception was: Connection refused: connect. Type: class java.net.ConnectException
+ERROR 2015-09-17 23:39:45,039 [[vendasonline].Mule.02] org.mule.exception.DefaultSystemExceptionStrategy: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect

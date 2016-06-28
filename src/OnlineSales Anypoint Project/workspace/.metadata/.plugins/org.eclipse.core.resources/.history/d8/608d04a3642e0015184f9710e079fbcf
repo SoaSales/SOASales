@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ws="http://www.mulesoft.org/schema/mule/ws"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd">
+    <flow name="compareproductsFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
+        <cxf:proxy-service namespace="http://tempuri.org/" service="ProductsService" payload="body" wsdlLocation="http://localhost/ProductService/Services/ProductsService.svc?wsdl" doc:name="CXF"/>
+        <logger message="START  #[payload]" level="INFO" doc:name="Logger"/>
+        <echo-component doc:name="Echo"/>
+        <custom-transformer class="Transformers.ProductIdentifierTransformer" doc:name="Create Products Identifiers List"/>
+        <collection-splitter doc:name="Collection Splitter"/>
+        <logger level="INFO" doc:name="Logger" message="Splitter: SEQUENCE: #[message.correlationSequence] ID #[message.correlationId] Group: #[message.correlationGroupSize] Message: #[message]"/>
+        <set-variable variableName="vendor" value="#[payload.getVendorId()]" doc:name="Variable"/>
+        <flow-ref name="SetCorrelationVariables" doc:name="SetCorrelationVariables"/>
+    
+        
+        <logger message="set Main Flow: SEQUENCE: #[message.correlationSequence] ID #[message.correlationId] Group:#[message.correlationGroupSize]  variables  Seq: #[flowVars.correlationSequence] Id: #[flowVars.'correlationId ']  MESSAGE:  #[message]" level="INFO" doc:name="Logger"/>
+        <flow-ref name="compareproductsSub_Flow" doc:name="compareproductsSub_Flow"/>
+       
+        <logger level="INFO" doc:name="Logger" message="Sub Flow Result SEQUENCE: #[message.correlationSequence]  ID #[message.correlationId] MESSAGE:  #[message]"/>
+        <collection-aggregator failOnTimeout="false" doc:name="Collection Aggregator" timeout="6000"/>
+        <logger message="Agregattor Result  #[message] SEQUENCE: #[message.correlationSequence] ID #[message.correlationId]  MESSAGE:  #[message]" level="INFO" doc:name="Logger"/>
+        <custom-transformer class="Transformers.CompareResponseTransformer" doc:name="Java"/>
+        <logger message="Result #[message]" level="INFO" doc:name="Logger"/>
+        <logger message="Return Response #[message] Payload: #[message.payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <sub-flow name="compareproductsSub_Flow">
+       
+       
+        <logger message="Choice: SEQUENCE: #[message.correlationSequence] ID #[message.correlationId] variable: #[flowVars.correlationSequence]" level="INFO" doc:name="Logger"/>
+    
+     <choice doc:name="Choice">
+            <when expression="#[flowVars.vendor == '2']">
+                <logger message="Choice Vendor:  #[payload.getVendorId()]" level="INFO" doc:name="Logger"/>
+                <set-payload value="&lt;ser:ViewBook xmlns:ser=&quot;http://Services/&quot;&gt;&lt;arg0&gt;#[payload.getProductId()]&lt;/arg0&gt;&lt;/ser:ViewBook&gt;" doc:name="Set Payload"/>
+                <logger message="SOAP REQUEST #[payload]" level="INFO" doc:name="Logger"/>
+                <ws:consumer config-ref="ListingService" operation="ViewBook" doc:name="Web Service Consumer"/>
+                <logger message="SOAP RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.BookToProductTransformer" doc:name="Java"/>
+            </when>
+            <otherwise>
+                <logger message="DEFAULT REST id: #[payload.getProductId()]" level="INFO" doc:name="Logger"/>
+                <http:request config-ref="ProductsService" path="/#[payload.getProductId()]" method="GET" doc:name="HTTP">
+                    <http:request-builder>
+                    </http:request-builder>
+                </http:request>
+                <logger message="REST RESULT" level="INFO" doc:name="Logger"/>
+                <echo-component doc:name="Echo"/>
+                <custom-transformer class="Transformers.ProductToProductTransformer" doc:name="Java"/>
+            </otherwise>
+        </choice>
+       
+        
+        <logger message="Choice RESULT: SEQUENCE: #[message.correlationSequence] ID #[message.correlationId] variable: #[flowVars.correlationSequence]  MESSAGE:  #[message]" level="INFO" doc:name="Logger"/>
+        <flow-ref name="SetCorrelationProperties" doc:name="SetCorrelationProperties"/>
+        
+    </sub-flow>
+    
+    <sub-flow name="SetCorrelationVariables" >
+	    <set-variable variableName="correlationSequence" value="#[message.correlationSequence]" doc:name="Set Sequence" />
+        <set-variable variableName="correlationId " value="#[message.correlationId]" doc:name="Set Id"/>
+        <set-variable variableName="correlationGroupSize" value="#[message.correlationGroupSize]" doc:name="Set Group"/>
+        <logger message="Variables - ID: #[flowVars.'correlationId '] - Sequence: #[flowVars.correlationSequence] - Group: #[flowVars.correlationGroupSize]" level="INFO" doc:name="Logger"/>
+    </sub-flow>
+    
+    <sub-flow name="SetCorrelationProperties">
+	    <set-property propertyName="MULE_CORRELATION_SEQUENCE" value="#[flowVars.correlationSequence]" doc:name="Set Sequence" />
+        <set-property propertyName="MULE_CORRELATION_ID" value="#[flowVars.correlationId].toString()#sthash.Ri7wqjTq.dpuf" doc:name="Set Id "/>
+        <set-property propertyName="MULE_CORRELATION_GROUP_SIZE" value="#[flowVars.correlationGroupSize]" doc:name="Set Group"/>
+        <logger message="Variables - ID: #[flowVars.'correlationId '] / #[message.correlationId] - Sequence: #[flowVars.correlationSequence] / #[message.correlationSequence] - Group: #[flowVars.correlationGroupSize] / #[message.correlationGroupSize]" level="INFO" doc:name="Logger"/>
+    </sub-flow>
+</mule>

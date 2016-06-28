@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="OnlineBooksDB" uuid="5c0095e0-346a-42c5-b1a1-fe080901f955">
+      <secret-storage>master_key</secret-storage>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,297 @@
+ERROR 2015-09-20 01:37:41,135 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@57236] org.mule.exception.DefaultSystemExceptionStrategy: 
+********************************************************************************
+Message               : java.io.EOFException (javax.jms.JMSException)
+Type                  : org.mule.transport.ConnectException
+Code                  : MULE_ERROR--2
+JavaDoc               : http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/ConnectException.html
+JMS Code              : null
+********************************************************************************
+Exception stack is:
+1. null (java.io.EOFException)
+  java.io.DataInputStream:-1 (null)
+2. java.io.EOFException(JMS Code: null) (javax.jms.JMSException)
+  org.apache.activemq.util.JMSExceptionSupport:54 (http://java.sun.com/j2ee/sdk_1.3/techdocs/api/javax/jms/JMSException.html)
+3. java.io.EOFException (javax.jms.JMSException) (org.mule.transport.ConnectException)
+  org.mule.transport.jms.JmsConnector:529 (http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/ConnectException.html)
+********************************************************************************
+Root Exception stack trace:
+java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:267)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:221)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:213)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:196)
+	at java.lang.Thread.run(Unknown Source)
+
+********************************************************************************
+
+INFO  2015-09-20 01:37:41,136 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@57236] org.mule.exception.DefaultSystemExceptionStrategy: Exception caught is a ConnectException, attempting to reconnect...
+INFO  2015-09-20 01:37:41,138 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@57236] org.mule.lifecycle.AbstractLifecycleManager: Stopping connector: Active_MQ
+WARN  2015-09-20 01:37:41,177 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@57236] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Exception closing JMS connection: java.io.EOFException
+INFO  2015-09-20 01:37:41,178 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@57236] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Disconnected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=85f54d
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+ERROR 2015-09-20 01:37:42,202 [[vendasonline].Mule.02] org.mule.retry.notifiers.ConnectNotifier: Failed to connect/reconnect: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=85f54d
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=false
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+. Root Exception was: Connection refused: connect. Type: class java.net.ConnectException
+ERROR 2015-09-20 01:37:42,204 [[vendasonline].Mule.02] org.mule.exception.DefaultSystemExceptionStrategy: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+INFO  2015-09-20 23:59:25,319 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'vendasonline'                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-09-20 23:59:25,489 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2015-09-20 23:59:25,714 [main] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@52ac26: startup date [Sun Sep 20 23:59:25 BST 2015]; root of context hierarchy
+WARN  2015-09-20 23:59:27,359 [main] org.mule.transport.http.config.HttpResponseBuilderDefinitionParser: Schema warning: Use of element <response-builder> is deprecated.  HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead..
+WARN  2015-09-20 23:59:29,261 [main] org.mule.module.ognl.expression.OgnlExpressionEvaluator: OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+INFO  2015-09-20 23:59:30,987 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-tx-log\tx2.log
+INFO  2015-09-20 23:59:31,020 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx1.log and C:\Users\Administrator\AnypointStudio\workspace\.mule\.\.mule\vendasonline\queue-xa-tx-log\tx2.log
+INFO  2015-09-20 23:59:31,085 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2015-09-20 23:59:31,940 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: Active_MQ
+INFO  2015-09-20 23:59:32,192 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow1
+INFO  2015-09-20 23:59:32,193 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@832ca7
+INFO  2015-09-20 23:59:32,246 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow1.stage1
+INFO  2015-09-20 23:59:32,263 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.2278287
+INFO  2015-09-20 23:59:32,336 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow2
+INFO  2015-09-20 23:59:32,337 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1143859
+INFO  2015-09-20 23:59:32,342 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow2.stage1
+INFO  2015-09-20 23:59:32,347 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: JSMTest
+INFO  2015-09-20 23:59:32,347 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1ffa16e
+INFO  2015-09-20 23:59:32,352 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: JSMTest.stage1
+INFO  2015-09-20 23:59:34,491 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: EbaySetVariablesFindByProduct
+INFO  2015-09-20 23:59:34,492 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1bb1af9
+INFO  2015-09-20 23:59:34,496 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: EbaySetVariablesFindByProduct.stage1
+INFO  2015-09-20 23:59:38,622 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: getproductFlow
+INFO  2015-09-20 23:59:38,623 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@116ad58
+INFO  2015-09-20 23:59:38,629 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: getproductFlow.stage1
+INFO  2015-09-20 23:59:38,689 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.8165044
+INFO  2015-09-20 23:59:40,943 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.25090387
+INFO  2015-09-20 23:59:40,943 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.6445522
+INFO  2015-09-20 23:59:43,529 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: compareproductsSub_Flow1
+INFO  2015-09-20 23:59:43,530 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1a1dfa7
+INFO  2015-09-20 23:59:43,536 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: compareproductsSub_Flow1.stage1
+INFO  2015-09-20 23:59:43,590 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.75743
+INFO  2015-09-20 23:59:46,002 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.23643736
+INFO  2015-09-20 23:59:46,003 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.22225848
+INFO  2015-09-20 23:59:46,007 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare1
+INFO  2015-09-20 23:59:46,008 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1f3b58e
+INFO  2015-09-20 23:59:46,015 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare1.stage1
+INFO  2015-09-20 23:59:46,033 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare2
+INFO  2015-09-20 23:59:46,033 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1f1ea2d
+INFO  2015-09-20 23:59:46,039 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare2.stage1
+INFO  2015-09-20 23:59:46,051 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare3
+INFO  2015-09-20 23:59:46,051 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@35f260
+INFO  2015-09-20 23:59:46,057 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare3.stage1
+INFO  2015-09-20 23:59:46,069 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: Compare4
+INFO  2015-09-20 23:59:46,070 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@15089b4
+INFO  2015-09-20 23:59:46,076 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: Compare4.stage1
+INFO  2015-09-20 23:59:46,190 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: comparetestFlow
+INFO  2015-09-20 23:59:46,191 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5b8471
+INFO  2015-09-20 23:59:46,197 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: comparetestFlow.stage1
+WARN  2015-09-20 23:59:46,356 [main] org.mule.transport.http.HttpConnector: HTTP transport is deprecated and will be removed in Mule 4.0. Use HTTP module instead.
+INFO  2015-09-20 23:59:46,525 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: connector.http.mule.default
+INFO  2015-09-20 23:59:47,952 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.18731440
+INFO  2015-09-20 23:59:47,984 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: vendasonlineFlow
+INFO  2015-09-20 23:59:47,985 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1d5ec34
+INFO  2015-09-20 23:59:47,990 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: vendasonlineFlow.stage1
+INFO  2015-09-20 23:59:48,139 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.22884784
+INFO  2015-09-20 23:59:51,462 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: searchProductFlow
+INFO  2015-09-20 23:59:51,463 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@12646bb
+INFO  2015-09-20 23:59:51,469 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: searchProductFlow.stage1
+INFO  2015-09-20 23:59:51,535 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.4030604
+INFO  2015-09-20 23:59:51,540 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.16839862
+INFO  2015-09-20 23:59:52,865 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.12140229
+INFO  2015-09-20 23:59:52,924 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow
+INFO  2015-09-20 23:59:52,925 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@f76b1d
+INFO  2015-09-20 23:59:52,931 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow.stage1
+INFO  2015-09-20 23:59:52,931 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.21723478
+INFO  2015-09-20 23:59:52,988 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.21460927
+INFO  2015-09-20 23:59:53,099 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: productsflowFlow1
+INFO  2015-09-20 23:59:53,100 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1da503d
+INFO  2015-09-20 23:59:53,106 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: productsflowFlow1.stage1
+INFO  2015-09-20 23:59:53,107 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.441442
+INFO  2015-09-20 23:59:53,107 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.30567378
+INFO  2015-09-20 23:59:53,108 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.32874616
+INFO  2015-09-20 23:59:53,154 [main] org.mule.component.ComponentLifecycleManager: Initialising component: component.14929217
+INFO  2015-09-20 23:59:53,169 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: GetProduct
+INFO  2015-09-20 23:59:53,169 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1f945d7
+INFO  2015-09-20 23:59:53,175 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: GetProduct.stage1
+INFO  2015-09-20 23:59:53,199 [main] org.mule.config.spring.SpringXmlConfigurationBuilder: Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-09-20 23:59:53,199 [main] org.mule.config.builders.AutoConfigurationBuilder: Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\vendasonline.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\searchproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsservice.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\productsflow.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\getproduct.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\comparetest.xml'}, ConfigResource{resourceName='C:\Users\Administrator\AnypointStudio\workspace\.mule\apps\vendasonline\compareproducts.xml'}]"
+INFO  2015-09-20 23:59:53,201 [main] org.mule.module.launcher.application.DefaultMuleApplication: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'vendasonline'                              +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-09-20 23:59:53,214 [main] org.mule.util.queue.QueueXaResourceManager: Starting ResourceManager
+INFO  2015-09-20 23:59:53,214 [main] org.mule.util.queue.QueueXaResourceManager: Started ResourceManager
+INFO  2015-09-20 23:59:53,256 [main] org.mule.transport.http.HttpConnector: Connected: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=1d63982
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-09-20 23:59:53,256 [main] org.mule.transport.http.HttpConnector: Starting: HttpConnector
+{
+  name=connector.http.mule.default
+  lifecycle=initialise
+  this=1d63982
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[http]
+  serviceOverrides=<none>
+}
+
+INFO  2015-09-20 23:59:53,257 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: connector.http.mule.default
+INFO  2015-09-20 23:59:53,819 [main] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Connected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=1e9ad27
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2015-09-20 23:59:53,820 [main] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Starting: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=1e9ad27
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2015-09-20 23:59:53,820 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: Active_MQ
+INFO  2015-09-20 23:59:53,836 [main] org.mule.modules.cors.agents.DefaultSplashScreenAgent: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  2015-09-20 23:59:53,837 [main] org.mule.lifecycle.AbstractLifecycleManager: Starting model: _muleSystemModel
+INFO  2015-09-20 23:59:53,839 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow1
+INFO  2015-09-20 23:59:53,841 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow1.stage1
+INFO  2015-09-20 23:59:53,847 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.2278287
+INFO  2015-09-20 23:59:53,862 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: JSMTest
+INFO  2015-09-20 23:59:53,863 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: JSMTest.stage1
+INFO  2015-09-20 23:59:53,866 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow2
+INFO  2015-09-20 23:59:53,866 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow2.stage1
+INFO  2015-09-20 23:59:53,869 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: vendasonlineFlow
+INFO  2015-09-20 23:59:53,869 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: vendasonlineFlow.stage1
+INFO  2015-09-20 23:59:53,874 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.22884784
+INFO  2015-09-20 23:59:53,875 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: searchProductFlow
+INFO  2015-09-20 23:59:53,876 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: searchProductFlow.stage1
+INFO  2015-09-20 23:59:53,880 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.4030604
+INFO  2015-09-20 23:59:53,881 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.16839862
+INFO  2015-09-20 23:59:53,882 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.12140229
+INFO  2015-09-20 23:59:53,884 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow
+INFO  2015-09-20 23:59:53,884 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow.stage1
+INFO  2015-09-20 23:59:53,886 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.21723478
+INFO  2015-09-20 23:59:53,888 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.21460927
+INFO  2015-09-20 23:59:53,890 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: productsflowFlow1
+INFO  2015-09-20 23:59:53,890 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: productsflowFlow1.stage1
+INFO  2015-09-20 23:59:53,892 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.441442
+INFO  2015-09-20 23:59:53,895 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.30567378
+INFO  2015-09-20 23:59:53,896 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.32874616
+INFO  2015-09-20 23:59:53,897 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.14929217
+INFO  2015-09-20 23:59:53,900 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: GetProduct
+INFO  2015-09-20 23:59:53,900 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: GetProduct.stage1
+INFO  2015-09-20 23:59:53,903 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: getproductFlow
+INFO  2015-09-20 23:59:53,904 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: getproductFlow.stage1
+INFO  2015-09-20 23:59:53,906 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.8165044
+INFO  2015-09-20 23:59:53,907 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.25090387
+INFO  2015-09-20 23:59:53,920 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.6445522
+INFO  2015-09-20 23:59:53,921 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: EbaySetVariablesFindByProduct
+INFO  2015-09-20 23:59:53,922 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: EbaySetVariablesFindByProduct.stage1
+INFO  2015-09-20 23:59:53,925 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: comparetestFlow
+INFO  2015-09-20 23:59:53,925 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: comparetestFlow.stage1
+INFO  2015-09-20 23:59:53,927 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.18731440
+INFO  2015-09-20 23:59:53,931 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare1
+INFO  2015-09-20 23:59:53,931 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare1.stage1
+INFO  2015-09-20 23:59:53,934 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare2
+INFO  2015-09-20 23:59:53,934 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare2.stage1
+INFO  2015-09-20 23:59:53,937 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare3
+INFO  2015-09-20 23:59:53,938 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare3.stage1
+INFO  2015-09-20 23:59:53,941 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: Compare4
+INFO  2015-09-20 23:59:53,941 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: Compare4.stage1
+INFO  2015-09-20 23:59:53,944 [main] org.mule.construct.FlowConstructLifecycleManager: Starting flow: compareproductsSub_Flow1
+INFO  2015-09-20 23:59:53,944 [main] org.mule.processor.SedaStageLifecycleManager: Starting service: compareproductsSub_Flow1.stage1
+INFO  2015-09-20 23:59:53,947 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.75743
+INFO  2015-09-20 23:59:53,949 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.23643736
+INFO  2015-09-20 23:59:53,950 [main] org.mule.component.ComponentLifecycleManager: Starting component: component.22225848
+INFO  2015-09-20 23:59:53,992 [main] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Listening for requests on http://0.0.0.0:8081/VendasOnline
+INFO  2015-09-20 23:59:53,998 [main] org.mule.module.management.agent.WrapperManagerAgent: This JVM hasn't been launched by the wrapper, the agent will not run.
+INFO  2015-09-20 23:59:54,059 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="connector.http.mule.default.1"
+INFO  2015-09-20 23:59:54,060 [main] org.mule.module.management.agent.AbstractJmxAgent: Registered Connector Service with name Mule.vendasonline:type=Connector,name="Active.MQ"
+INFO  2015-09-20 23:59:54,069 [main] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Application: vendasonline                                          *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   JMX Agent                                                        *
+**********************************************************************
+INFO  2015-09-20 23:59:59,595 [[vendasonline].HTTP_Listener_Configuration.worker.01] org.mule.api.processor.LoggerMessageProcessor: Search Request: Query params: +   cooking 
+INFO  2015-09-20 23:59:59,610 [[vendasonline].ScatterGatherWorkManager.03] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - Ebay
+INFO  2015-09-20 23:59:59,610 [[vendasonline].ScatterGatherWorkManager.01] org.mule.api.processor.LoggerMessageProcessor: Flow WCF - LivrosOnline
+INFO  2015-09-20 23:59:59,610 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: Flow REST  - VendasOnline
+INFO  2015-09-20 23:59:59,622 [[vendasonline].ScatterGatherWorkManager.02] org.mule.api.processor.LoggerMessageProcessor: 
+org.mule.DefaultMuleMessage
+{
+  id=518b38e0-5feb-11e5-acfb-005056be0d94
+  payload=org.mule.transport.NullPayload
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    connection=Keep-Alive
+    host=10.84.128.65:8081
+    http.listener.path=/VendasOnline/api/ProductsService/Search
+    http.method=GET
+    http.query.params=ParameterMap{[searchParameters=[cooking]]}
+    http.query.string=searchParameters=cooking
+    http.remote.address=/10.84.128.65:58598
+    http.request.path=/VendasOnline/api/ProductsService/Search
+    http.request.uri=/VendasOnline/api/ProductsService/Search?searchParameters=cooking
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+  OUTBOUND scoped properties:
+    MULE_ENCODING=UTF-8
+  SESSION scoped properties:
+}
+WARN  2015-09-20 23:59:59,835 [[vendasonline].ScatterGatherWorkManager.01] org.mule.registry.TransientRegistry: TransientRegistry already contains an object named '_muleDefaultHttpRequestConfig'.  The previous object will be overwritten.
